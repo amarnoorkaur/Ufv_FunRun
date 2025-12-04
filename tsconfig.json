@@ -19,5 +19,5 @@
     "esModuleInterop": true
   },
   "include": ["*.ts", "*.tsx", "components/**/*.ts", "components/**/*.tsx"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "exclude": ["node_modules", "vite.config.ts"]
 }
