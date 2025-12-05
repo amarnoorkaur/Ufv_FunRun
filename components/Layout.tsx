@@ -43,7 +43,7 @@ export const Layout: React.FC<LayoutProps> = ({ children, currentPage, onNavigat
                     <Heart size={24} fill="white" />
                  </div>
                  <div className="flex flex-col">
-                   <span className="font-heading font-bold text-xl tracking-tight text-ufv-green leading-none mb-1">UFV Fun-Run</span>
+                   <span className="font-heading font-bold text-xl tracking-tight text-ufv-green leading-none mb-1">UFV Fun Run</span>
                    <span className="text-[10px] text-gray-500 font-bold tracking-widest uppercase">Ethical Tech Initiative</span>
                  </div>
               </div>
@@ -126,16 +126,16 @@ export const Layout: React.FC<LayoutProps> = ({ children, currentPage, onNavigat
                 <div className="p-2 bg-white/10 rounded">
                     <Heart size={24} className="text-ufv-lightGreen" fill="currentColor" />
                 </div>
-                <span className="font-heading font-bold text-xl tracking-tight">UFV Fun-Run</span>
+                <span className="font-heading font-bold text-xl tracking-tight">UFV Fun Run</span>
               </div>
               <p className="text-gray-400 text-sm leading-relaxed font-sans mb-6">
-                A community-first initiative built for the entire UFV family: students, staff, alumni, and local partners. Running together, thriving together.
+                A community first initiative built for the entire UFV family: students, staff, alumni, and local partners. Running together, thriving together.
               </p>
               {/* Values Promise */}
               <div className="text-xs text-gray-500 space-y-1">
                 <p>✓ Your privacy, protected</p>
                 <p>✓ Free forever, for everyone</p>
-                <p>✓ Community-owned & operated</p>
+                <p>✓ Community owned & operated</p>
               </div>
             </div>
             
@@ -200,7 +200,7 @@ export const Layout: React.FC<LayoutProps> = ({ children, currentPage, onNavigat
               </p>
             </div>
             <div className="mt-10 text-center text-xs text-gray-600 font-sans">
-              &copy; {new Date().getFullYear()} UFV Fun-Run Initiative. All Rights Reserved. Built with ❤️ by UFV CS Students.
+              &copy; {new Date().getFullYear()} UFV Fun Run Initiative. All Rights Reserved. Built with ❤️ by UFV CS Students.
             </div>
           </div>
         </div>

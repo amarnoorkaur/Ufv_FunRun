@@ -67,7 +67,7 @@ const HeroSection = ({ onNavigate }: { onNavigate: (page: Page) => void }) => (
       {/* Values Promise Banner */}
       <div className="mt-16 flex flex-wrap gap-8 text-sm text-gray-300">
         <div className="flex items-center gap-2"><ShieldCheck size={18} className="text-ufv-lightGreen" /> Your Privacy, Protected</div>
-        <div className="flex items-center gap-2"><Heart size={18} className="text-ufv-lightGreen" /> Community-First, Always</div>
+        <div className="flex items-center gap-2"><Heart size={18} className="text-ufv-lightGreen" /> Community First, Always</div>
         <div className="flex items-center gap-2"><Users size={18} className="text-ufv-lightGreen" /> Free for Everyone</div>
       </div>
     </div>
@@ -85,7 +85,7 @@ const AboutInitiative = () => (
 
       <div className="prose prose-lg mx-auto text-gray-700 space-y-8 font-sans leading-relaxed">
         <p>
-          At UFV Fun-Run, we believe that <strong>health, connection, and community belong to everyone</strong>, not just a few. This project was born out of a commitment to build something that serves our entire UFV family: students, staff, alumni, and local partners.
+          At UFV Fun Run, we believe that <strong>health, connection, and community belong to everyone</strong>, not just a few. This project was born out of a commitment to build something that serves our entire UFV family: students, staff, alumni, and local partners.
         </p>
         <p>
           We're dedicated to creating a space where every runner, regardless of their fitness level, schedule, or background, feels welcome, supported, and empowered. Because when we run together, we don't just build endurance, <em>we build relationships, belonging, and a healthier, stronger community</em>.
@@ -94,7 +94,7 @@ const AboutInitiative = () => (
         <div className="bg-ufv-light p-8 rounded-ufv border-l-8 border-ufv-green shadow-soft">
           <h3 className="text-2xl font-heading font-bold text-ufv-green mb-4">Our Promise</h3>
           <p className="text-base text-ufv-dark font-medium">
-            We promise respect, privacy, and fairness because we genuinely care about you. Every decision we make considers its impact on all members of our community. Your well-being is not just a feature; it's our entire purpose.
+            We promise respect, privacy, and fairness because we genuinely care about you. Every decision we make considers its impact on all members of our community. Your wellbeing is not just a feature; it's our entire purpose.
           </p>
         </div>
 
@@ -136,7 +136,7 @@ const AboutInitiative = () => (
               <div>
                 <h4 className="text-xl font-heading font-bold text-ufv-dark mb-2">Addressing Community Skepticism</h4>
                 <p className="text-gray-600 leading-relaxed">
-                  Yes, this project received provincial funding from David Eby's government. We understand that raises questions. But here's the truth: this is one of <strong>dozens of community wellness grants</strong> distributed across BC to non-profit organizations. It's not a political campaign tool. It's a public health investment, managed locally by UFV students, staff, and faculty.
+                  Yes, this project received provincial funding from David Eby's government. We understand that raises questions. But here's the truth: this is one of <strong>dozens of community wellness grants</strong> distributed across BC to nonprofit organizations. It's not a political campaign tool. It's a public health investment, managed locally by UFV students, staff, and faculty.
                 </p>
               </div>
             </div>
@@ -162,7 +162,7 @@ const AboutInitiative = () => (
                 <Lock className="text-purple-600" size={28} />
               </div>
               <div>
-                <h4 className="text-xl font-heading font-bold text-ufv-dark mb-2">Transparent, Non-Profit Governance</h4>
+                <h4 className="text-xl font-heading font-bold text-ufv-dark mb-2">Transparent, Nonprofit Governance</h4>
                 <p className="text-gray-600 leading-relaxed">
                   Every dollar is accounted for. Quarterly financial reports are published publicly. No hidden fees, no profit motive, no corporate interests. This project exists solely to serve the UFV community. <strong>You can audit our finances anytime.</strong>
                 </p>
@@ -198,14 +198,14 @@ const AboutInitiative = () => (
 const AboutApp = () => (
   <div className="bg-ufv-light py-24">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <SectionHeading>The Saturday Fun-Run & Beyond</SectionHeading>
+      <SectionHeading>The Saturday Fun Run & Beyond</SectionHeading>
       <p className="text-center text-xl text-gray-600 max-w-3xl mx-auto mb-16">
         More than just a tracker. It's a digital companion for our campus culture.
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
         {[
-          { icon: Calendar, title: "Weekly Saturday Fun-Run", desc: "Every Saturday at 10 AM, unlock a special campus route. Join hundreds of students for a 5K loop." },
+          { icon: Calendar, title: "Weekly Saturday Fun Run", desc: "Every Saturday at 10 AM, unlock a special campus route. Join hundreds of students for a 5K loop." },
           { icon: Activity, title: "Ethical Tracking", desc: "Track distance and pace locally. Your data stays on your phone until you share it." },
           { icon: Users, title: "Groups & Challenges", desc: "Create groups for your major or dorm. Compete in 'Total Distance' challenges for charity." }
         ].map((feature, idx) => (
@@ -255,14 +255,14 @@ const Ethics = ({ onNavigate }: { onNavigate?: (page: Page) => void }) => {
     {
       title: "Designed for Our UFV Culture",
       description: "Inclusive. Respectful. Community rooted. We honor the identity of UFV and the land we live on, not corporate 'hustle culture.'",
-      feature: "Saturday Fun-Runs built around campus life and local traditions",
+      feature: "Saturday Fun Runs built around campus life and local traditions",
       icon: Globe,
       color: "green"
     },
     {
       title: "Built for Public Good, Not Profit",
       description: "No shareholders. No ads. No selling your data. This is a public initiative created to serve the community, not exploit it.",
-      feature: "100% free forever with transparent, non-profit governance",
+      feature: "100% free forever with transparent, nonprofit governance",
       icon: Heart,
       color: "red"
     },
@@ -282,7 +282,7 @@ const Ethics = ({ onNavigate }: { onNavigate?: (page: Page) => void }) => {
     },
     {
       title: "Rules That Protect Everyone, Always",
-      description: "Our strict privacy rules and community guidelines exist to maximize long-term happiness and safety for every member.",
+      description: "Our strict privacy rules and community guidelines exist to maximize long term happiness and safety for every member.",
       feature: "No-compromise privacy policy and transparent moderation",
       icon: Lock,
       color: "indigo"
@@ -309,16 +309,16 @@ const Ethics = ({ onNavigate }: { onNavigate?: (page: Page) => void }) => {
     { icon: Smartphone, title: "Accessibility-First", desc: "Screen readers, high contrast, works on older phones." },
     { icon: Gift, title: "Free Forever", desc: "No subscriptions, no premium tiers, no hidden costs." },
     { icon: ShieldCheck, title: "No Data Brokers", desc: "We don't sell, share, or monetize your information." },
-    { icon: MessageCircle, title: "Community-Driven", desc: "Features voted on by students. Your voice shapes the app." },
+    { icon: MessageCircle, title: "Community Driven", desc: "Features voted on by students. Your voice shapes the app." },
     { icon: Heart, title: "Equal Access", desc: "Same features for everyone, regardless of income." },
     { icon: Sparkles, title: "Transparent Updates", desc: "All changes explained. No sneaky policy updates." }
   ];
 
   const testimonials = [
     {
-      quote: "I was so anxious about using fitness apps because they always made me feel bad about myself. Fun-Run is different. It celebrates that I showed up, not how fast I went.",
+      quote: "I was so anxious about using fitness apps because they always made me feel bad about myself. Fun Run is different. It celebrates that I showed up, not how fast I went.",
       name: "Maya",
-      role: "Second-year Psychology Student",
+      role: "Second year Psychology Student",
       avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop"
     },
     {
@@ -370,7 +370,7 @@ const Ethics = ({ onNavigate }: { onNavigate?: (page: Page) => void }) => {
           
           <div className="max-w-3xl mx-auto space-y-6 text-lg md:text-xl text-gray-300 leading-relaxed">
             <p>
-              We started building Fun-Run because we were tired of wellness apps that made us feel <em>worse</em> about ourselves. Apps that tracked our every move, sold our data, and pressured us to compete.
+              We started building Fun Run because we were tired of wellness apps that made us feel <em>worse</em> about ourselves. Apps that tracked our every move, sold our data, and pressured us to compete.
             </p>
             <p>
               We wanted something different. Something built by students, for students. Something that celebrates showing up, not just showing off.
@@ -388,7 +388,7 @@ const Ethics = ({ onNavigate }: { onNavigate?: (page: Page) => void }) => {
               <CheckCircle size={16} className="text-ufv-lightGreen" /> No Data Sales
             </div>
             <div className="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full">
-              <CheckCircle size={16} className="text-ufv-lightGreen" /> Community-Owned
+              <CheckCircle size={16} className="text-ufv-lightGreen" /> Community Owned
             </div>
           </div>
         </div>
@@ -437,7 +437,7 @@ const Ethics = ({ onNavigate }: { onNavigate?: (page: Page) => void }) => {
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-ufv-dark mb-4">How These Principles Shape Your Experience</h2>
             <div className="h-1.5 w-24 bg-ufv-green rounded-full mx-auto mb-6"></div>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Every feature in Fun-Run was designed with these principles in mind. Here's what that looks like in practice.
+              Every feature in Fun Run was designed with these principles in mind. Here's what that looks like in practice.
             </p>
           </div>
 
@@ -514,7 +514,7 @@ const Ethics = ({ onNavigate }: { onNavigate?: (page: Page) => void }) => {
               </h3>
               
               <p className="text-lg text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed">
-                When you join the Fun-Run community, you're choosing technology that respects you as a human being. Not as a data point. Not as a revenue source. As a person who deserves wellness without exploitation.
+                When you join the Fun Run community, you're choosing technology that respects you as a human being. Not as a data point. Not as a revenue source. As a person who deserves wellness without exploitation.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -554,7 +554,7 @@ const Ethics = ({ onNavigate }: { onNavigate?: (page: Page) => void }) => {
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
               <p className="text-3xl font-bold mb-2">Always</p>
-              <p className="text-sm text-green-100">Community-Governed</p>
+              <p className="text-sm text-green-100">Community Governed</p>
             </div>
           </div>
         </div>
@@ -581,7 +581,7 @@ const Impact = () => (
               <div className="mt-1 bg-white/10 p-3 rounded-lg h-fit"><Brain className="text-ufv-lightGreen" size={28} /></div>
               <div>
                 <h3 className="text-xl font-heading font-bold text-white mb-2">Mental Wellness</h3>
-                <p className="text-gray-400 leading-relaxed">Running together helps reduce stress and anxiety. We care about your well-being beyond grades. Movement is medicine, and community is the cure for isolation.</p>
+                <p className="text-gray-400 leading-relaxed">Running together helps reduce stress and anxiety. We care about your wellbeing beyond grades. Movement is medicine, and community is the cure for isolation.</p>
               </div>
             </div>
             <div className="flex gap-6">
@@ -639,7 +639,7 @@ const Comparison = () => (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <SectionHeading>Why We're Different</SectionHeading>
       <p className="text-center text-xl text-gray-600 mb-16 max-w-2xl mx-auto">
-        We prioritize your well-being, your privacy, and your community, not shareholder returns.
+        We prioritize your wellbeing, your privacy, and your community, not shareholder returns.
       </p>
 
       <div className="bg-white rounded-xl shadow-soft overflow-hidden border border-gray-200">
@@ -649,12 +649,12 @@ const Comparison = () => (
               <tr className="bg-gray-50">
                 <th className="p-6 border-b border-gray-200 w-1/3 text-gray-500 font-heading uppercase text-sm tracking-wider">What Matters</th>
                 <th className="p-6 border-b border-gray-200 text-red-700 font-heading font-bold text-lg">Commercial Apps</th>
-                <th className="p-6 border-b border-ufv-green bg-ufv-green/10 text-ufv-green font-heading font-bold text-lg">UFV Fun-Run</th>
+                <th className="p-6 border-b border-ufv-green bg-ufv-green/10 text-ufv-green font-heading font-bold text-lg">UFV Fun Run</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-100 font-sans">
               {[
-                { feature: "Our Purpose", bad: "Profit & Growth", good: "Community Well-being" },
+                { feature: "Our Purpose", bad: "Profit & Growth", good: "Community Wellbeing" },
                 { feature: "Your Data", bad: "Sold to advertisers", good: "Private & Protected" },
                 { feature: "Cost", bad: "Subscriptions & Paywalls", good: "Free Forever, For All" },
                 { feature: "Design Goal", bad: "Maximize screen time", good: "Support your wellness" },
@@ -803,7 +803,7 @@ const GetInvolved = () => (
     <div className="max-w-5xl mx-auto px-4 relative z-10">
       <h2 className="text-4xl md:text-5xl font-heading font-bold mb-8">Join Us. You Belong Here</h2>
       <p className="text-2xl text-green-50 mb-6 font-light">
-        By joining the Fun-Run, you become part of something bigger: a shared commitment to well-being, fairness, and community care.
+        By joining the Fun Run, you become part of something bigger: a shared commitment to wellbeing, fairness, and community care.
       </p>
       <p className="text-lg text-green-100 mb-12 max-w-2xl mx-auto">
         Whether you're a student, staff member, alumni, or community partner, everyone is welcome. No pressure, no judgment, just community.
@@ -824,7 +824,7 @@ const GetInvolved = () => (
       <div className="mt-16 bg-white/10 backdrop-blur-sm rounded-xl p-8 max-w-3xl mx-auto text-left">
         <h3 className="text-xl font-heading font-bold mb-4 text-center">Our Community Charter</h3>
         <p className="text-green-100 text-sm leading-relaxed text-center">
-          By joining the Fun-Run, we commit together to respect each other, support each other's privacy, and run for shared well-being. Your participation, feedback, and trust matter. We build this together.
+          By joining the Fun Run, we commit together to respect each other, support each other's privacy, and run for shared wellbeing. Your participation, feedback, and trust matter. We build this together.
         </p>
       </div>
 
@@ -890,7 +890,7 @@ const GiveHub = () => {
           </div>
           <h2 className="text-4xl font-heading font-bold text-ufv-dark mb-4">GiveHub</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-6">
-            A community-driven marketplace where UFV members donate and claim items for free. Reduce waste, help peers, build community.
+            A community driven marketplace where UFV members donate and claim items for free. Reduce waste, help peers, build community.
           </p>
           
           {/* Ethical Values Banner */}
@@ -1246,7 +1246,7 @@ const AboutGrant = () => (
         </div>
         <h1 className="text-4xl md:text-5xl font-heading font-bold text-ufv-dark mb-6">About the Provincial Grant</h1>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-          Understanding the funding, governance, and transparency behind the UFV Fun-Run initiative.
+          Understanding the funding, governance, and transparency behind the UFV Fun Run initiative.
         </p>
       </div>
 
@@ -1263,7 +1263,7 @@ const AboutGrant = () => (
             In 2024, the BC government under Premier David Eby launched a <strong>Community Wellness Grant Program</strong> to address rising mental health challenges, social isolation, and physical inactivity among post-secondary students across the province.
           </p>
           <p>
-            UFV's proposal for a community-driven fitness app stood out because it emphasized <strong>ethical technology, local partnership, and democratic governance</strong>. Unlike commercial fitness apps that prioritize profit and data extraction, our proposal centered on genuine community well-being.
+            UFV's proposal for a community driven fitness app stood out because it emphasized <strong>ethical technology, local partnership, and democratic governance</strong>. Unlike commercial fitness apps that prioritize profit and data extraction, our proposal centered on genuine community wellbeing.
           </p>
           <div className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg">
             <p className="text-blue-900 font-medium mb-2">
@@ -1271,7 +1271,7 @@ const AboutGrant = () => (
             </p>
             <ul className="list-disc pl-5 space-y-2 text-blue-800">
               <li>Addresses documented mental health and physical wellness needs among students</li>
-              <li>Community-governed with transparent decision-making processes</li>
+              <li>Community governed with transparent decision making processes</li>
               <li>Free and accessible to all students, staff, alumni, and community partners</li>
               <li>Built on ethical technology principles taught in UFV's own curriculum</li>
               <li>Supports local Fraser Valley businesses and circular economy initiatives</li>
@@ -1319,7 +1319,7 @@ const AboutGrant = () => (
         </div>
       </div>
 
-      {/* How We Remain Neutral, Ethical, and Community-Owned */}
+      {/* How We Remain Neutral, Ethical, and Community Owned */}
       <div className="mb-16">
         <h2 className="text-3xl font-heading font-bold text-ufv-dark mb-8 flex items-center gap-3">
           <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
@@ -1440,7 +1440,7 @@ const AboutGrant = () => (
         </h2>
         <div className="prose prose-lg max-w-none text-gray-700 space-y-6">
           <p>
-            This project directly benefits students' financial well-being in multiple ways:
+            This project directly benefits students' financial wellbeing in multiple ways:
           </p>
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-gradient-to-br from-green-50 to-green-100 p-8 rounded-xl border border-green-200">
@@ -1550,7 +1550,7 @@ const AboutGrant = () => (
           <div className="bg-ufv-green text-white p-8 rounded-xl text-center">
             <p className="text-2xl font-heading font-bold mb-4">This is UFV's Moment</p>
             <p className="text-lg leading-relaxed">
-              We can prove that ethical technology isn't just a utopian dream. It's practical, scalable, and sustainable. The Fun-Run is our proof of concept.
+              We can prove that ethical technology isn't just a utopian dream. It's practical, scalable, and sustainable. The Fun Run is our proof of concept.
             </p>
           </div>
         </div>
@@ -1581,7 +1581,7 @@ const LocalImpact = () => (
         </div>
         <h2 className="text-4xl md:text-5xl font-heading font-bold text-ufv-dark mb-6">Local Economic & Social Impact</h2>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-          How the Fun-Run strengthens the Fraser Valley economy, supports local businesses, and builds community resilience.
+          How the Fun Run strengthens the Fraser Valley economy, supports local businesses, and builds community resilience.
         </p>
       </div>
 
@@ -1597,14 +1597,14 @@ const LocalImpact = () => (
           </div>
           <div className="space-y-4 text-gray-700">
             <p className="leading-relaxed">
-              The Fun-Run app <strong>partners with Fraser Valley wellness businesses</strong> to create mutual benefit. Local gyms, yoga studios, healthy cafes, and sports equipment stores gain visibility and customer traffic through our community.
+              The Fun Run app <strong>partners with Fraser Valley wellness businesses</strong> to create mutual benefit. Local gyms, yoga studios, healthy cafes, and sports equipment stores gain visibility and customer traffic through our community.
             </p>
             <div className="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500">
               <p className="font-bold text-blue-900 mb-3">How It Works:</p>
               <ul className="space-y-2 text-blue-800 text-sm">
                 <li className="flex items-start gap-2">
                   <CheckCircle className="text-blue-600 mt-0.5 flex-shrink-0" size={16} />
-                  <span>Partner businesses offer exclusive discounts to Fun-Run participants</span>
+                  <span>Partner businesses offer exclusive discounts to Fun Run participants</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle className="text-blue-600 mt-0.5 flex-shrink-0" size={16} />
@@ -1636,7 +1636,7 @@ const LocalImpact = () => (
           </div>
           <div className="space-y-4 text-gray-700">
             <p className="leading-relaxed">
-              Financial stress is one of the biggest barriers to student wellness. The Fun-Run removes multiple cost barriers simultaneously.
+              Financial stress is one of the biggest barriers to student wellness. The Fun Run removes multiple cost barriers simultaneously.
             </p>
             <div className="space-y-3">
               <div className="flex items-start gap-3 bg-green-50 p-4 rounded-lg">
@@ -1713,17 +1713,17 @@ const LocalImpact = () => (
           </div>
         </div>
 
-        {/* Health → Well-being → Academic Success */}
+        {/* Health → Wellbeing → Academic Success */}
         <div className="bg-white rounded-2xl p-10 shadow-soft border border-gray-200 hover:border-ufv-green transition-all">
           <div className="flex items-center gap-4 mb-6">
             <div className="w-14 h-14 bg-orange-100 rounded-full flex items-center justify-center">
               <Brain className="text-orange-600" size={28} />
             </div>
-            <h3 className="text-2xl font-heading font-bold text-ufv-dark">Health → Well-being → Academic Success</h3>
+            <h3 className="text-2xl font-heading font-bold text-ufv-dark">Health → Wellbeing → Academic Success</h3>
           </div>
           <div className="space-y-4 text-gray-700">
             <p className="leading-relaxed">
-              Physical activity isn't just about fitness. <strong>Research shows direct links between physical health, mental well-being, and academic performance.</strong>
+              Physical activity isn't just about fitness. <strong>Research shows direct links between physical health, mental wellbeing, and academic performance.</strong>
             </p>
             <div className="space-y-4">
               <div className="flex items-start gap-4">
@@ -1788,7 +1788,7 @@ const LocalImpact = () => (
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
               <div className="text-4xl mb-3">🌱</div>
               <p className="font-bold mb-2">Sustainable Growth</p>
-              <p className="text-sm text-green-100">Long-term community wellness reduces healthcare costs and social services burden</p>
+              <p className="text-sm text-green-100">Long term community wellness reduces healthcare costs and social services burden</p>
             </div>
           </div>
         </div>
@@ -1909,7 +1909,7 @@ const AppMockup = () => (
         <div className="bg-gradient-to-br from-ufv-light to-white rounded-2xl p-8 shadow-soft border border-gray-200">
           <div className="bg-white rounded-xl p-6 shadow-inner mb-4 min-h-[400px] flex flex-col border-4 border-gray-100">
             <div className="flex items-center justify-between mb-4">
-              <h3 className="font-heading font-bold text-lg text-ufv-dark">Saturday Fun-Run</h3>
+              <h3 className="font-heading font-bold text-lg text-ufv-dark">Saturday Fun Run</h3>
               <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full font-bold">LIVE</span>
             </div>
             

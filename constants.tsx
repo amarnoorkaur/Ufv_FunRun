@@ -56,7 +56,7 @@ export const ETHICAL_THEORIES: EthicalTheory[] = [
     name: 'Rule Utilitarianism',
     pageNumber: 77,
     concept: 'Follow rules that maximize happiness.',
-    application: 'Strict privacy rules might seem restrictive to developers, but they create the greatest long-term happiness by fostering a safe environment free of surveillance.',
+    application: 'Strict privacy rules might seem restrictive to developers, but they create the greatest long term happiness by fostering a safe environment free of surveillance.',
     icon: 'Lock'
   },
   {
@@ -204,7 +204,7 @@ export const FAQS: FaqItem[] = [
   },
   {
     question: "What makes this app more ethical than commercial fitness apps?",
-    answer: "Commercial apps optimize for engagement and profit, which often means addictive design patterns, social pressure, and data harvesting. We optimize for your genuine well-being. We don't use psychological tricks to keep you scrolling. We don't sell your data. We don't create artificial FOMO or pressure. Our success is measured by community health outcomes and user satisfaction, not by quarterly revenue or growth metrics. We answer to our community, not shareholders."
+    answer: "Commercial apps optimize for engagement and profit, which often means addictive design patterns, social pressure, and data harvesting. We optimize for your genuine wellbeing. We don't use psychological tricks to keep you scrolling. We don't sell your data. We don't create artificial FOMO or pressure. Our success is measured by community health outcomes and user satisfaction, not by quarterly revenue or growth metrics. We answer to our community, not shareholders."
   },
   {
     question: "Where exactly do profits or savings go?",
