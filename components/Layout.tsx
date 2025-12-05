@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Page, NavItem } from '../types';
 import { LAND_ACKNOWLEDGEMENT } from '../constants';
-import { Menu, X, Heart, Github, Twitter, Facebook, Mail } from 'lucide-react';
+import { Menu, X, Heart, Github, Twitter, Facebook, Mail, ChevronDown } from 'lucide-react';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -9,27 +9,146 @@ interface LayoutProps {
   onNavigate: (page: Page) => void;
 }
 
-const NAV_ITEMS: NavItem[] = [
-  { label: 'Home', page: Page.HOME },
-  { label: 'About', page: Page.ABOUT_INITIATIVE },
-  { label: 'The App', page: Page.ABOUT_APP },
-  { label: 'The Grant', page: Page.ABOUT_GRANT },
-  { label: 'GiveHub', page: Page.GIVEHUB },
-  { label: 'Stories', page: Page.COMMUNITY_STORIES },
-  { label: 'Ethics', page: Page.ETHICS },
-  { label: 'Privacy', page: Page.PRIVACY },
-  { label: 'App Preview', page: Page.APP_MOCKUP },
-  { label: 'FAQ', page: Page.FAQ },
-];
+interface DropdownItem {
+  label: string;
+  page: Page;
+}
+
+interface NavDropdown {
+  label: string;
+  items: DropdownItem[];
+}
+
+// Dropdown configurations
+const COMMUNITY_DROPDOWN: NavDropdown = {
+  label: 'Community',
+  items: [
+    { label: 'GiveHub', page: Page.GIVEHUB },
+    { label: 'Stories', page: Page.COMMUNITY_STORIES },
+    { label: 'App Preview', page: Page.APP_MOCKUP },
+  ]
+};
+
+const ETHICS_DROPDOWN: NavDropdown = {
+  label: 'Ethics',
+  items: [
+    { label: 'Ethical Principles', page: Page.ETHICS },
+    { label: 'Privacy', page: Page.PRIVACY },
+    { label: 'The Grant', page: Page.ABOUT_GRANT },
+    { label: 'FAQ', page: Page.FAQ },
+  ]
+};
 
 export const Layout: React.FC<LayoutProps> = ({ children, currentPage, onNavigate }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [mobileAccordion, setMobileAccordion] = useState<string | null>(null);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setOpenDropdown(null);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   const handleNavClick = (page: Page) => {
     onNavigate(page);
     setIsMobileMenuOpen(false);
+    setOpenDropdown(null);
+    setMobileAccordion(null);
     window.scrollTo(0, 0);
   };
+
+  const toggleDropdown = (label: string) => {
+    setOpenDropdown(openDropdown === label ? null : label);
+  };
+
+  const toggleMobileAccordion = (label: string) => {
+    setMobileAccordion(mobileAccordion === label ? null : label);
+  };
+
+  const isDropdownActive = (dropdown: NavDropdown) => {
+    return dropdown.items.some(item => item.page === currentPage);
+  };
+
+  const DropdownMenu: React.FC<{ dropdown: NavDropdown }> = ({ dropdown }) => (
+    <div className="relative">
+      <button
+        onClick={() => toggleDropdown(dropdown.label)}
+        className={`flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 font-heading ${
+          isDropdownActive(dropdown) || openDropdown === dropdown.label
+            ? 'text-ufv-green bg-green-50'
+            : 'text-gray-600 hover:text-ufv-green hover:bg-green-50/50'
+        }`}
+      >
+        {dropdown.label}
+        <ChevronDown 
+          size={16} 
+          className={`transition-transform duration-200 ${openDropdown === dropdown.label ? 'rotate-180' : ''}`} 
+        />
+      </button>
+      
+      {openDropdown === dropdown.label && (
+        <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-100 py-2 z-50">
+          {dropdown.items.map((item) => (
+            <button
+              key={item.label}
+              onClick={() => handleNavClick(item.page)}
+              className={`block w-full text-left px-4 py-2.5 text-sm font-medium transition-colors ${
+                currentPage === item.page
+                  ? 'text-ufv-green bg-green-50'
+                  : 'text-gray-600 hover:text-ufv-green hover:bg-green-50/50'
+              }`}
+            >
+              {item.label}
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+
+  const MobileAccordion: React.FC<{ dropdown: NavDropdown }> = ({ dropdown }) => (
+    <div className="border-b border-gray-100">
+      <button
+        onClick={() => toggleMobileAccordion(dropdown.label)}
+        className={`flex items-center justify-between w-full px-4 py-3.5 text-base font-semibold ${
+          isDropdownActive(dropdown)
+            ? 'text-ufv-green bg-green-50'
+            : 'text-gray-700'
+        }`}
+      >
+        {dropdown.label}
+        <ChevronDown 
+          size={20} 
+          className={`transition-transform duration-200 ${mobileAccordion === dropdown.label ? 'rotate-180' : ''}`} 
+        />
+      </button>
+      
+      {mobileAccordion === dropdown.label && (
+        <div className="bg-gray-50 pb-2">
+          {dropdown.items.map((item) => (
+            <button
+              key={item.label}
+              onClick={() => handleNavClick(item.page)}
+              className={`block w-full text-left pl-8 pr-4 py-3 text-sm font-medium ${
+                currentPage === item.page
+                  ? 'text-ufv-green bg-green-100 border-l-4 border-ufv-green'
+                  : 'text-gray-600 hover:text-ufv-green hover:bg-green-50'
+              }`}
+            >
+              {item.label}
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
+  );
 
   return (
     <div className="min-h-screen flex flex-col bg-ufv-light font-sans text-ufv-dark">
@@ -50,23 +169,53 @@ export const Layout: React.FC<LayoutProps> = ({ children, currentPage, onNavigat
             </div>
             
             {/* Desktop Menu */}
-            <div className="hidden lg:flex items-center space-x-1">
-              {NAV_ITEMS.map((item) => (
-                <button
-                  key={item.label}
-                  onClick={() => handleNavClick(item.page)}
-                  className={`px-3 py-2 rounded-md text-sm font-semibold transition-all duration-200 font-heading ${
-                    currentPage === item.page
-                      ? 'text-ufv-green bg-green-50'
-                      : 'text-gray-600 hover:text-ufv-green hover:bg-gray-50'
-                  }`}
-                >
-                  {item.label}
-                </button>
-              ))}
+            <div className="hidden lg:flex items-center gap-1" ref={dropdownRef}>
+              {/* Home */}
+              <button
+                onClick={() => handleNavClick(Page.HOME)}
+                className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 font-heading ${
+                  currentPage === Page.HOME
+                    ? 'text-ufv-green bg-green-50'
+                    : 'text-gray-600 hover:text-ufv-green hover:bg-green-50/50'
+                }`}
+              >
+                Home
+              </button>
+
+              {/* About */}
+              <button
+                onClick={() => handleNavClick(Page.ABOUT_INITIATIVE)}
+                className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 font-heading ${
+                  currentPage === Page.ABOUT_INITIATIVE
+                    ? 'text-ufv-green bg-green-50'
+                    : 'text-gray-600 hover:text-ufv-green hover:bg-green-50/50'
+                }`}
+              >
+                About
+              </button>
+
+              {/* The App */}
+              <button
+                onClick={() => handleNavClick(Page.ABOUT_APP)}
+                className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 font-heading ${
+                  currentPage === Page.ABOUT_APP
+                    ? 'text-ufv-green bg-green-50'
+                    : 'text-gray-600 hover:text-ufv-green hover:bg-green-50/50'
+                }`}
+              >
+                The App
+              </button>
+
+              {/* Community Dropdown */}
+              <DropdownMenu dropdown={COMMUNITY_DROPDOWN} />
+
+              {/* Ethics Dropdown */}
+              <DropdownMenu dropdown={ETHICS_DROPDOWN} />
+
+              {/* Get Involved CTA */}
               <button 
                 onClick={() => handleNavClick(Page.GET_INVOLVED)}
-                className="ml-4 px-6 py-2.5 bg-ufv-green text-white rounded-ufv font-bold shadow-sm hover:bg-ufv-dark transition-all transform hover:-translate-y-0.5 font-heading"
+                className="ml-6 px-6 py-2.5 bg-[#0B9E43] text-white rounded-full font-bold shadow-sm hover:bg-ufv-green hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 font-heading"
               >
                 Get Involved
               </button>
@@ -76,7 +225,7 @@ export const Layout: React.FC<LayoutProps> = ({ children, currentPage, onNavigat
             <div className="flex items-center lg:hidden">
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-ufv-green hover:bg-gray-100 focus:outline-none"
+                className="inline-flex items-center justify-center p-2 rounded-lg text-gray-500 hover:text-ufv-green hover:bg-green-50 focus:outline-none transition-colors"
               >
                 {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
               </button>
@@ -86,27 +235,59 @@ export const Layout: React.FC<LayoutProps> = ({ children, currentPage, onNavigat
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden bg-white border-b border-gray-200 shadow-lg">
-            <div className="px-4 pt-2 pb-6 space-y-1">
-              {NAV_ITEMS.map((item) => (
-                <button
-                  key={item.label}
-                  onClick={() => handleNavClick(item.page)}
-                  className={`block w-full text-left px-4 py-3 rounded-md text-base font-medium ${
-                    currentPage === item.page
-                      ? 'text-ufv-green bg-green-50 border-l-4 border-ufv-green'
-                      : 'text-gray-600 hover:text-ufv-green hover:bg-gray-50'
-                  }`}
-                >
-                  {item.label}
-                </button>
-              ))}
-               <button 
-                onClick={() => handleNavClick(Page.GET_INVOLVED)}
-                className="w-full text-center mt-6 px-5 py-4 bg-ufv-green text-white rounded-lg font-bold shadow-md"
+          <div className="lg:hidden bg-white border-t border-gray-100 shadow-lg">
+            <div className="py-2">
+              {/* Home */}
+              <button
+                onClick={() => handleNavClick(Page.HOME)}
+                className={`block w-full text-left px-4 py-3.5 text-base font-semibold border-b border-gray-100 ${
+                  currentPage === Page.HOME
+                    ? 'text-ufv-green bg-green-50 border-l-4 border-l-ufv-green'
+                    : 'text-gray-700 hover:bg-green-50'
+                }`}
               >
-                Get Involved
+                Home
               </button>
+
+              {/* About */}
+              <button
+                onClick={() => handleNavClick(Page.ABOUT_INITIATIVE)}
+                className={`block w-full text-left px-4 py-3.5 text-base font-semibold border-b border-gray-100 ${
+                  currentPage === Page.ABOUT_INITIATIVE
+                    ? 'text-ufv-green bg-green-50 border-l-4 border-l-ufv-green'
+                    : 'text-gray-700 hover:bg-green-50'
+                }`}
+              >
+                About
+              </button>
+
+              {/* The App */}
+              <button
+                onClick={() => handleNavClick(Page.ABOUT_APP)}
+                className={`block w-full text-left px-4 py-3.5 text-base font-semibold border-b border-gray-100 ${
+                  currentPage === Page.ABOUT_APP
+                    ? 'text-ufv-green bg-green-50 border-l-4 border-l-ufv-green'
+                    : 'text-gray-700 hover:bg-green-50'
+                }`}
+              >
+                The App
+              </button>
+
+              {/* Community Accordion */}
+              <MobileAccordion dropdown={COMMUNITY_DROPDOWN} />
+
+              {/* Ethics Accordion */}
+              <MobileAccordion dropdown={ETHICS_DROPDOWN} />
+
+              {/* Get Involved CTA */}
+              <div className="px-4 pt-4 pb-6">
+                <button 
+                  onClick={() => handleNavClick(Page.GET_INVOLVED)}
+                  className="w-full text-center py-4 bg-[#0B9E43] text-white rounded-full font-bold shadow-md hover:bg-ufv-green transition-colors"
+                >
+                  Get Involved
+                </button>
+              </div>
             </div>
           </div>
         )}
