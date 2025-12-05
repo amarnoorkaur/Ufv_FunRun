@@ -219,9 +219,11 @@ const HeroSection = ({ onNavigate }: { onNavigate: (page: Page) => void }) => (
         <div className="rounded-2xl overflow-hidden shadow-2xl">
           <video 
             className="w-full h-auto"
-            controls
-            poster=""
-            preload="metadata"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
           >
             <source src="/invideo-ai-1080 Join the Movement_ UFV Fun Run 2025-12-05.mp4" type="video/mp4" />
             Your browser does not support the video tag.
