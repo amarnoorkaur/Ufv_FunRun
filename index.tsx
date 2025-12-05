@@ -243,80 +243,319 @@ const AboutApp = () => (
   </div>
 );
 
-const Ethics = () => {
-  const getIcon = (iconName: string) => {
-    switch(iconName) {
-      case 'Brain': return <Brain />;
-      case 'Globe': return <Globe />;
-      case 'Scale': return <Scale />;
-      case 'Activity': return <Activity />;
-      case 'ShieldCheck': return <ShieldCheck />;
-      case 'Smile': return <Smile />;
-      case 'Lock': return <Lock />;
-      case 'Users': return <Users />;
-      case 'Heart': return <Heart />;
-      default: return <Heart />;
+const Ethics = ({ onNavigate }: { onNavigate?: (page: Page) => void }) => {
+  const principles = [
+    {
+      title: "You Decide What's Right for You",
+      description: "Your pace. Your goals. Your comfort level. We never judge, rank, or punish you. Everyone's health journey looks different, and that's okay.",
+      feature: "Personal goal-setting with no public rankings or performance scores",
+      icon: Brain,
+      color: "blue"
+    },
+    {
+      title: "Designed for Our UFV Culture",
+      description: "Inclusive. Respectful. Community-rooted. We honor the identity of UFV and the land we live on — not corporate 'hustle culture.'",
+      feature: "Saturday Fun-Runs built around campus life and local traditions",
+      icon: Globe,
+      color: "green"
+    },
+    {
+      title: "Built for Public Good, Not Profit",
+      description: "No shareholders. No ads. No selling your data. This is a public initiative created to serve the community — not exploit it.",
+      feature: "100% free forever with transparent, non-profit governance",
+      icon: Heart,
+      color: "red"
+    },
+    {
+      title: "Your Rights Come First",
+      description: "We will NEVER use your data in a way that disrespects your autonomy. Privacy is not a feature — it's a duty we take seriously.",
+      feature: "Local-first data storage with full export and delete controls",
+      icon: ShieldCheck,
+      color: "purple"
+    },
+    {
+      title: "Built for Everyday Joy and Connection",
+      description: "Fun-Run is designed to give you immediate joy, connection, and a sense of achievement — every time you participate.",
+      feature: "Instant endorphin boost through community runs and celebrations",
+      icon: Smile,
+      color: "yellow"
+    },
+    {
+      title: "Rules That Protect Everyone, Always",
+      description: "Our strict privacy rules and community guidelines exist to maximize long-term happiness and safety for every member.",
+      feature: "No-compromise privacy policy and transparent moderation",
+      icon: Lock,
+      color: "indigo"
+    },
+    {
+      title: "Fairness at Every Step",
+      description: "Every member gets equal access to resources, opportunities, and support — no matter their background, income, or ability.",
+      feature: "No paywalls, premium tiers, or exclusive features",
+      icon: Scale,
+      color: "teal"
+    },
+    {
+      title: "We Lead with Character",
+      description: "Kindness, honesty, and respect shape everything we design. Technology should help us become better humans — not distract us from being one.",
+      feature: "Community Stories that celebrate growth, resilience, and support",
+      icon: Award,
+      color: "orange"
     }
+  ];
+
+  const features = [
+    { icon: Lock, title: "No GPS Tracking", desc: "Your location stays private. We never store where you've been." },
+    { icon: Users, title: "No Competition Pressure", desc: "Challenges are optional. No leaderboards that shame you." },
+    { icon: Smartphone, title: "Accessibility-First", desc: "Screen readers, high contrast, works on older phones." },
+    { icon: Gift, title: "Free Forever", desc: "No subscriptions, no premium tiers, no hidden costs." },
+    { icon: ShieldCheck, title: "No Data Brokers", desc: "We don't sell, share, or monetize your information." },
+    { icon: MessageCircle, title: "Community-Driven", desc: "Features voted on by students. Your voice shapes the app." },
+    { icon: Heart, title: "Equal Access", desc: "Same features for everyone, regardless of income." },
+    { icon: Sparkles, title: "Transparent Updates", desc: "All changes explained. No sneaky policy updates." }
+  ];
+
+  const testimonials = [
+    {
+      quote: "I was so anxious about using fitness apps because they always made me feel bad about myself. Fun-Run is different. It celebrates that I showed up, not how fast I went.",
+      name: "Maya",
+      role: "Second-year Psychology Student",
+      avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop"
+    },
+    {
+      quote: "As someone with a disability, I've been excluded from so many wellness apps. This one actually thought about people like me. The accessibility features aren't an afterthought — they're built in.",
+      name: "Jordan",
+      role: "Graduate Student, Education",
+      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop"
+    },
+    {
+      quote: "I love that my data isn't being sold to advertisers. For once, I feel like the product isn't ME — it's actually the service helping me.",
+      name: "Aisha",
+      role: "UFV Staff Member",
+      avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop"
+    }
+  ];
+
+  const getColorClasses = (color: string) => {
+    const colors: { [key: string]: { bg: string, text: string, light: string, border: string } } = {
+      blue: { bg: 'bg-blue-500', text: 'text-blue-600', light: 'bg-blue-50', border: 'border-blue-200' },
+      green: { bg: 'bg-ufv-green', text: 'text-ufv-green', light: 'bg-green-50', border: 'border-green-200' },
+      red: { bg: 'bg-red-500', text: 'text-red-600', light: 'bg-red-50', border: 'border-red-200' },
+      purple: { bg: 'bg-purple-500', text: 'text-purple-600', light: 'bg-purple-50', border: 'border-purple-200' },
+      yellow: { bg: 'bg-yellow-500', text: 'text-yellow-600', light: 'bg-yellow-50', border: 'border-yellow-200' },
+      indigo: { bg: 'bg-indigo-500', text: 'text-indigo-600', light: 'bg-indigo-50', border: 'border-indigo-200' },
+      teal: { bg: 'bg-teal-500', text: 'text-teal-600', light: 'bg-teal-50', border: 'border-teal-200' },
+      orange: { bg: 'bg-orange-500', text: 'text-orange-600', light: 'bg-orange-50', border: 'border-orange-200' }
+    };
+    return colors[color] || colors.green;
   };
 
   return (
-    <div className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeading>9.5 Theories of Ethical Tech</SectionHeading>
-        <p className="text-center text-xl text-gray-600 max-w-3xl mx-auto mb-16">
-          We built this app using the very same ethical frameworks taught in UFV's philosophy and computer science courses.
-        </p>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {ETHICAL_THEORIES.map((theory) => (
-            <div key={theory.id} className="border border-gray-200 rounded-ufv p-8 hover:border-ufv-green transition-colors hover:shadow-soft group bg-white">
-              <div className="flex items-start gap-6">
-                <div className="p-4 bg-ufv-light rounded-full text-ufv-dark group-hover:bg-ufv-green group-hover:text-white transition-colors">
-                  {getIcon(theory.icon)}
-                </div>
-                <div>
-                  <div className="flex justify-between items-baseline mb-3">
-                    <h3 className="text-xl font-heading font-bold text-ufv-dark">{theory.name}</h3>
-                    <span className="text-xs font-mono text-gray-400 bg-gray-100 px-2 py-1 rounded border">pg {theory.pageNumber}</span>
-                  </div>
-                  <p className="text-sm font-bold text-ufv-green mb-3 uppercase tracking-wider">{theory.concept}</p>
-                  <p className="text-gray-600 leading-relaxed font-sans">{theory.application}</p>
-                </div>
-              </div>
-            </div>
-          ))}
+    <div className="bg-white">
+      {/* Hero Section - Emotional Story Intro */}
+      <div className="relative bg-gradient-to-br from-ufv-dark via-gray-900 to-ufv-dark text-white py-24 overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-20 left-20 w-72 h-72 bg-ufv-green rounded-full filter blur-3xl"></div>
+          <div className="absolute bottom-20 right-20 w-96 h-96 bg-ufv-lightGreen rounded-full filter blur-3xl"></div>
         </div>
-
-        {/* Theory-to-Feature Mapping Section */}
-        <div className="mt-20 bg-ufv-light rounded-2xl p-12">
-          <div className="text-center mb-12">
-            <h3 className="text-3xl font-heading font-bold text-ufv-dark mb-4">How Each Ethical Theory Shaped Our App</h3>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              These aren't just abstract concepts. Every theory directly influenced specific features and design decisions in the Fun-Run app.
+        
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium text-ufv-lightGreen mb-8">
+            <Heart size={16} className="animate-pulse" /> Our Design Philosophy
+          </div>
+          
+          <h1 className="text-4xl md:text-6xl font-heading font-extrabold mb-8 leading-tight">
+            Ethical by Design.<br />
+            <span className="text-ufv-lightGreen">Human by Nature.</span>
+          </h1>
+          
+          <div className="max-w-3xl mx-auto space-y-6 text-lg md:text-xl text-gray-300 leading-relaxed">
+            <p>
+              We started building Fun-Run because we were tired of wellness apps that made us feel <em>worse</em> about ourselves. Apps that tracked our every move, sold our data, and pressured us to compete.
+            </p>
+            <p>
+              We wanted something different. Something built by students, for students. Something that celebrates showing up — not just showing off.
+            </p>
+            <p className="text-white font-medium">
+              This is technology that respects you. Wellness that welcomes everyone. A community that cares.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {THEORY_FEATURE_MAPPINGS.map((mapping, idx) => (
-              <div key={idx} className="bg-white rounded-xl p-8 border border-gray-200 hover:border-ufv-green transition-all hover:shadow-soft">
-                <h4 className="text-xl font-heading font-bold text-ufv-green mb-4">{mapping.theoryName}</h4>
-                <ul className="space-y-3">
-                  {mapping.features.map((feature, featureIdx) => (
-                    <li key={featureIdx} className="flex items-start gap-3">
-                      <CheckCircle className="text-ufv-lightGreen mt-0.5 flex-shrink-0" size={18} />
-                      <span className="text-gray-700 leading-relaxed">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
+          <div className="mt-12 flex flex-wrap justify-center gap-6 text-sm">
+            <div className="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full">
+              <CheckCircle size={16} className="text-ufv-lightGreen" /> Free Forever
+            </div>
+            <div className="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full">
+              <CheckCircle size={16} className="text-ufv-lightGreen" /> No Data Sales
+            </div>
+            <div className="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full">
+              <CheckCircle size={16} className="text-ufv-lightGreen" /> Community-Owned
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Our Ethical Design Principles */}
+      <div className="py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-ufv-dark mb-4">Our Ethical Design Principles</h2>
+            <div className="h-1.5 w-24 bg-ufv-green rounded-full mx-auto mb-6"></div>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              These aren't just slogans. They're the values that guide every feature, every decision, and every line of code.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {principles.map((principle, idx) => {
+              const colors = getColorClasses(principle.color);
+              return (
+                <div 
+                  key={idx} 
+                  className={`bg-white rounded-xl p-6 border ${colors.border} hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group`}
+                >
+                  <div className={`w-14 h-14 ${colors.light} rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform`}>
+                    <principle.icon className={colors.text} size={28} />
+                  </div>
+                  <h3 className="text-lg font-heading font-bold text-ufv-dark mb-3 leading-snug">{principle.title}</h3>
+                  <p className="text-gray-600 text-sm leading-relaxed mb-4">{principle.description}</p>
+                  <div className={`${colors.light} rounded-lg p-3 border ${colors.border}`}>
+                    <p className="text-xs font-medium text-gray-700">
+                      <span className={`${colors.text} font-bold`}>In the app:</span> {principle.feature}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+
+      {/* How These Principles Shape Your Experience */}
+      <div className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-ufv-dark mb-4">How These Principles Shape Your Experience</h2>
+            <div className="h-1.5 w-24 bg-ufv-green rounded-full mx-auto mb-6"></div>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Every feature in Fun-Run was designed with these principles in mind. Here's what that looks like in practice.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {features.map((feature, idx) => (
+              <div 
+                key={idx} 
+                className="bg-gradient-to-br from-ufv-light to-white rounded-xl p-6 border border-gray-200 hover:border-ufv-green transition-all duration-300 hover:shadow-soft group"
+              >
+                <div className="w-12 h-12 bg-ufv-green/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-ufv-green transition-colors">
+                  <feature.icon className="text-ufv-green group-hover:text-white transition-colors" size={24} />
+                </div>
+                <h3 className="font-heading font-bold text-ufv-dark mb-2">{feature.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{feature.desc}</p>
               </div>
             ))}
           </div>
+        </div>
+      </div>
 
-          {/* Footer Note */}
-          <div className="mt-12 text-center">
-            <p className="text-gray-600 italic max-w-3xl mx-auto">
-              "This integration demonstrates that ethical technology isn't just theoretical. It requires intentional design choices at every step, from data storage to user interface to governance structure."
+      {/* Ethics in Real Life - Student Voices */}
+      <div className="py-24 bg-ufv-green/5">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-ufv-dark mb-4">Ethics in Real Life</h2>
+            <div className="h-1.5 w-24 bg-ufv-green rounded-full mx-auto mb-6"></div>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Real stories from real people in our community. This is what ethical design feels like.
             </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, idx) => (
+              <div 
+                key={idx} 
+                className="bg-white rounded-2xl p-8 shadow-soft border border-gray-100 hover:shadow-lg transition-all duration-300 relative"
+              >
+                <div className="absolute -top-4 left-8 w-8 h-8 bg-ufv-green rounded-full flex items-center justify-center">
+                  <span className="text-white text-xl font-serif">"</span>
+                </div>
+                <p className="text-gray-700 leading-relaxed mb-6 italic">"{testimonial.quote}"</p>
+                <div className="flex items-center gap-4">
+                  <img 
+                    src={testimonial.avatar} 
+                    alt={testimonial.name} 
+                    className="w-12 h-12 rounded-full object-cover border-2 border-ufv-green/20"
+                  />
+                  <div>
+                    <p className="font-heading font-bold text-ufv-dark">{testimonial.name}</p>
+                    <p className="text-sm text-gray-500">{testimonial.role}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* The Difference We're Making */}
+      <div className="py-24 bg-white">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-gradient-to-br from-ufv-dark to-gray-900 rounded-3xl p-12 text-white text-center relative overflow-hidden">
+            <div className="absolute inset-0 opacity-10">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-ufv-lightGreen rounded-full filter blur-3xl"></div>
+            </div>
+            
+            <div className="relative z-10">
+              <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-8">
+                <Heart className="text-ufv-lightGreen" size={32} />
+              </div>
+              
+              <h3 className="text-2xl md:text-3xl font-heading font-bold mb-6 leading-snug max-w-3xl mx-auto">
+                Ethics isn't a checkbox for us — it's the standard we're building toward every single day.
+              </h3>
+              
+              <p className="text-lg text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed">
+                When you join the Fun-Run community, you're choosing technology that respects you as a human being. Not as a data point. Not as a revenue source. As a person who deserves wellness without exploitation.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <button 
+                  onClick={() => onNavigate && onNavigate(Page.ABOUT_APP)}
+                  className="px-8 py-4 bg-ufv-lightGreen text-ufv-dark rounded-xl font-heading font-bold hover:bg-white transition-colors flex items-center justify-center gap-2"
+                >
+                  Explore the App <ArrowRight size={20} />
+                </button>
+                <button 
+                  onClick={() => onNavigate && onNavigate(Page.GET_INVOLVED)}
+                  className="px-8 py-4 bg-white/10 text-white border border-white/30 rounded-xl font-heading font-bold hover:bg-white/20 transition-colors"
+                >
+                  Join the Community
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Our Commitment Banner */}
+      <div className="py-16 bg-ufv-green">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="flex items-center justify-center gap-3 mb-6">
+            <ShieldCheck className="text-white" size={32} />
+            <h3 className="text-2xl font-heading font-bold text-white">Our Commitment to You</h3>
+          </div>
+          <div className="grid sm:grid-cols-3 gap-6 text-white">
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+              <p className="text-3xl font-bold mb-2">100%</p>
+              <p className="text-sm text-green-100">Free, Forever</p>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+              <p className="text-3xl font-bold mb-2">Zero</p>
+              <p className="text-sm text-green-100">Data Sold to Third Parties</p>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+              <p className="text-3xl font-bold mb-2">Always</p>
+              <p className="text-sm text-green-100">Community-Governed</p>
+            </div>
           </div>
         </div>
       </div>
@@ -1940,7 +2179,7 @@ const App = () => {
       case Page.ABOUT_GRANT:
         return <AboutGrant />;
       case Page.ETHICS:
-        return <Ethics />;
+        return <Ethics onNavigate={setPage} />;
       case Page.IMPACT:
         return <Impact />;
       case Page.COMPARISON:
