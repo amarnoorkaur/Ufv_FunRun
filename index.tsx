@@ -207,6 +207,27 @@ const HeroSection = ({ onNavigate }: { onNavigate: (page: Page) => void }) => (
           </g>
         </svg>
       </div>
+
+      {/* Video Section */}
+      <div className="mt-16 max-w-5xl mx-auto px-4">
+        <div className="text-center mb-8">
+          <h3 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">Join the Movement</h3>
+          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+            Watch how the UFV Fun Run is bringing our community together through wellness and connection.
+          </p>
+        </div>
+        <div className="rounded-2xl overflow-hidden shadow-2xl">
+          <video 
+            className="w-full h-auto"
+            controls
+            poster=""
+            preload="metadata"
+          >
+            <source src="/invideo-ai-1080 Join the Movement_ UFV Fun Run 2025-12-05.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
     </div>
   </div>
 );
