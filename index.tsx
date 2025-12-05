@@ -176,7 +176,7 @@ const AboutInitiative = () => (
                 <Heart className="text-green-600" size={28} />
               </div>
               <div>
-                <h4 className="text-xl font-heading font-bold text-ufv-dark mb-2">User Control & Democratic Decision-Making</h4>
+                <h4 className="text-xl font-heading font-bold text-ufv-dark mb-2">User Control & Democratic Decisions</h4>
                 <p className="text-gray-600 leading-relaxed">
                   Major features and policies are decided by <strong>community vote</strong>. Your voice matters. You're not just a user, you're a stakeholder. We practice genuine participatory design, where students and community members shape the app's direction.
                 </p>
@@ -283,7 +283,7 @@ const Ethics = ({ onNavigate }: { onNavigate?: (page: Page) => void }) => {
     {
       title: "Rules That Protect Everyone, Always",
       description: "Our strict privacy rules and community guidelines exist to maximize long term happiness and safety for every member.",
-      feature: "No-compromise privacy policy and transparent moderation",
+      feature: "Uncompromising privacy policy and transparent moderation",
       icon: Lock,
       color: "indigo"
     },
@@ -1260,7 +1260,7 @@ const AboutGrant = () => (
         </h2>
         <div className="prose prose-lg max-w-none text-gray-700 space-y-6">
           <p>
-            In 2024, the BC government under Premier David Eby launched a <strong>Community Wellness Grant Program</strong> to address rising mental health challenges, social isolation, and physical inactivity among post-secondary students across the province.
+            In 2024, the BC government under Premier David Eby launched a <strong>Community Wellness Grant Program</strong> to address rising mental health challenges, social isolation, and physical inactivity among postsecondary students across the province.
           </p>
           <p>
             UFV's proposal for a community driven fitness app stood out because it emphasized <strong>ethical technology, local partnership, and democratic governance</strong>. Unlike commercial fitness apps that prioritize profit and data extraction, our proposal centered on genuine community wellbeing.
@@ -1306,7 +1306,7 @@ const AboutGrant = () => (
             </div>
             <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
               <p className="font-bold text-ufv-dark mb-2">❓ "Who really controls this project?"</p>
-              <p className="text-gray-600 text-sm">UFV students, staff, and faculty. Our governance board operates independently with full decision-making authority.</p>
+              <p className="text-gray-600 text-sm">UFV students, staff, and faculty. Our governance board operates independently with full authority over all decisions.</p>
             </div>
             <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
               <p className="font-bold text-ufv-dark mb-2">❓ "What happens when the grant runs out?"</p>
@@ -1354,7 +1354,7 @@ const AboutGrant = () => (
             <div className="w-12 h-12 bg-ufv-green/10 rounded-full flex items-center justify-center mb-4">
               <Scale className="text-ufv-green" size={24} />
             </div>
-            <h3 className="font-heading font-bold text-lg text-ufv-dark mb-3">Democratic Decision-Making</h3>
+            <h3 className="font-heading font-bold text-lg text-ufv-dark mb-3">Democratic Decisions</h3>
             <p className="text-sm text-gray-600">
               Major features and policies require community approval via student vote. Quarterly town halls allow any UFV member to propose changes, challenge decisions, or request audits.
             </p>
@@ -1948,7 +1948,7 @@ const AppMockup = () => (
           </div>
           <div className="text-center">
             <h4 className="font-heading font-bold text-lg text-ufv-dark mb-1">Saturday Run Map</h4>
-            <p className="text-sm text-gray-600">See who's running in real-time</p>
+            <p className="text-sm text-gray-600">See who's running in realtime</p>
           </div>
         </div>
 

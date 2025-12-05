@@ -200,7 +200,7 @@ export const Layout: React.FC<LayoutProps> = ({ children, currentPage, onNavigat
               </p>
             </div>
             <div className="mt-10 text-center text-xs text-gray-600 font-sans">
-              &copy; {new Date().getFullYear()} UFV Fun Run Initiative. All Rights Reserved. Built with ❤️ by UFV CS Students.
+              &copy; {new Date().getFullYear()} UFV Fun Run Initiative. All Rights Reserved.
             </div>
           </div>
         </div>
