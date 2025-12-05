@@ -2198,6 +2198,171 @@ const AppMockup = () => (
         </div>
       </div>
 
+      {/* Live Route Preview Section */}
+      <section className="py-16 px-6 mb-16">
+        <div className="text-center mb-10">
+          <h3 className="text-3xl md:text-4xl font-heading font-bold text-ufv-dark mb-4">Live Route Preview</h3>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            See a simulated 5KM loop around UFV's core campus. The moving dot represents a typical runner completing the Fun Run route—no GPS required, just distance and time tracking.
+          </p>
+        </div>
+        
+        <div className="max-w-[960px] mx-auto bg-white rounded-[18px] shadow-xl p-4 md:p-6 overflow-hidden">
+          <svg 
+            className="w-full h-auto block mx-auto" 
+            viewBox="0 0 900 550"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlnsXlink="http://www.w3.org/1999/xlink"
+          >
+            {/* Background (map style) */}
+            <defs>
+              {/* Soft grid pattern */}
+              <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                <rect width="40" height="40" fill="#F3F4F6"/>
+                <path d="M40 0 H0 V40" fill="none" stroke="#E2E5EA" strokeWidth="1"/>
+              </pattern>
+
+              {/* Park green */}
+              <linearGradient id="parkGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stopColor="#CFEAD0"/>
+                <stop offset="100%" stopColor="#B8E2B5"/>
+              </linearGradient>
+
+              {/* Drop shadow for map card */}
+              <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+                <feDropShadow dx="0" dy="3" stdDeviation="6" floodColor="rgba(0,0,0,0.15)"/>
+              </filter>
+            </defs>
+
+            {/* Map card background */}
+            <g filter="url(#shadow)">
+              <rect x="20" y="20" width="860" height="510" rx="20" fill="white"/>
+              <rect x="40" y="80" width="820" height="430" rx="18" fill="url(#grid)"/>
+            </g>
+
+            {/* Title & badge */}
+            <text x="50%" y="55" textAnchor="middle" fontSize="28" fill="#006341"
+                  fontFamily="Inter, system-ui" fontWeight="600">
+              UFV Campus 5KM Live Route
+            </text>
+
+            <rect x="710" y="35" rx="10" ry="10" width="150" height="36" fill="#006341"/>
+            <text x="785" y="59" textAnchor="middle" fontSize="18" fill="white"
+                  fontFamily="Inter, system-ui">
+              5.0 km Loop
+            </text>
+
+            {/* Park / green areas */}
+            <rect x="70" y="110" width="230" height="140" rx="18" fill="url(#parkGrad)"/>
+            <text x="90" y="135" fontSize="13" fill="#2F4F2F" fontFamily="Inter">Campus Green</text>
+
+            <rect x="580" y="120" width="230" height="160" rx="18" fill="url(#parkGrad)"/>
+            <text x="600" y="145" fontSize="13" fill="#2F4F2F" fontFamily="Inter">Riverside Trail</text>
+
+            {/* Roads (light grey like Google Maps) */}
+            <g stroke="#D1D5DB" strokeWidth="6" strokeLinecap="round">
+              <line x1="80" y1="220" x2="820" y2="220"/>
+              <line x1="120" y1="140" x2="120" y2="480"/>
+              <line x1="320" y1="120" x2="320" y2="480"/>
+              <line x1="520" y1="120" x2="520" y2="480"/>
+              <line x1="720" y1="120" x2="720" y2="480"/>
+            </g>
+
+            {/* Buildings */}
+            {/* A Building */}
+            <rect x="340" y="260" width="110" height="60" fill="#E5ECE5" stroke="#A3BAA3" strokeWidth="2.5" rx="8"/>
+            <text x="395" y="292" textAnchor="middle" fontSize="13" fill="#333" fontFamily="Inter">A Building</text>
+
+            {/* B Building + Cafeteria */}
+            <rect x="180" y="290" width="130" height="70" fill="#E5ECE5" stroke="#A3BAA3" strokeWidth="2.5" rx="8"/>
+            <text x="245" y="320" textAnchor="middle" fontSize="13" fill="#333" fontFamily="Inter">B Building</text>
+            <text x="245" y="337" textAnchor="middle" fontSize="11" fill="#666" fontFamily="Inter">Cafeteria</text>
+
+            {/* S Building */}
+            <rect x="540" y="250" width="130" height="70" fill="#E5ECE5" stroke="#A3BAA3" strokeWidth="2.5" rx="8"/>
+            <text x="605" y="285" textAnchor="middle" fontSize="13" fill="#333" fontFamily="Inter">S Building</text>
+
+            {/* Library */}
+            <rect x="380" y="170" width="110" height="60" fill="#E5ECE5" stroke="#A3BAA3" strokeWidth="2.5" rx="8"/>
+            <text x="435" y="205" textAnchor="middle" fontSize="13" fill="#333" fontFamily="Inter">Library</text>
+
+            {/* SUB */}
+            <rect x="650" y="300" width="130" height="70" fill="#E5ECE5" stroke="#A3BAA3" strokeWidth="2.5" rx="8"/>
+            <text x="715" y="332" textAnchor="middle" fontSize="13" fill="#333" fontFamily="Inter">SUB</text>
+
+            {/* Fitness Centre */}
+            <rect x="420" y="350" width="120" height="70" fill="#E5ECE5" stroke="#A3BAA3" strokeWidth="2.5" rx="8"/>
+            <text x="480" y="385" textAnchor="middle" fontSize="13" fill="#333" fontFamily="Inter">Fitness Centre</text>
+
+            {/* Bus Loop */}
+            <ellipse cx="210" cy="200" rx="55" ry="22" fill="#E6EFE6" stroke="#A3BAA3" strokeWidth="2"/>
+            <text x="210" y="205" textAnchor="middle" fontSize="12" fill="#333" fontFamily="Inter">Bus Loop</text>
+
+            {/* Trees clusters */}
+            <g fill="#0B9E43">
+              <circle cx="110" cy="410" r="13"/>
+              <circle cx="135" cy="430" r="16"/>
+              <circle cx="160" cy="410" r="14"/>
+
+              <circle cx="760" cy="170" r="15"/>
+              <circle cx="785" cy="190" r="18"/>
+              <circle cx="805" cy="165" r="13"/>
+
+              <circle cx="600" cy="430" r="14"/>
+              <circle cx="625" cy="450" r="16"/>
+              <circle cx="645" cy="430" r="13"/>
+            </g>
+
+            {/* Landmarks text */}
+            <text x="525" y="150" fontSize="12" fill="#374151" fontFamily="Inter">Scenic Hill</text>
+            <text x="735" y="260" fontSize="12" fill="#374151" fontFamily="Inter">Campus Quad</text>
+            <text x="250" y="500" fontSize="12" fill="#374151" fontFamily="Inter">Tree Trail</text>
+            <text x="85" y="380" fontSize="12" fill="#374151" fontFamily="Inter">Parking Lot</text>
+
+            {/* ROUTE PATH (for animation) */}
+            <path id="routePath"
+                  d="
+                    M140 460
+                    C220 150, 390 135, 580 180
+                    S830 310, 700 410
+                    S460 470, 230 455
+                  "
+                  fill="none" stroke="#22C55E" strokeWidth="8" strokeLinecap="round"/>
+
+            {/* START / FINISH markers (visually) */}
+            <circle cx="140" cy="460" r="10" fill="#006341" stroke="white" strokeWidth="3"/>
+            <text x="165" y="455" fontSize="14" fill="#111827" fontFamily="Inter">Start</text>
+
+            <circle cx="230" cy="455" r="10" fill="#F97316" stroke="white" strokeWidth="3"/>
+            <text x="255" y="450" fontSize="14" fill="#111827" fontFamily="Inter">Finish</text>
+
+            {/* ANIMATED RUNNER (dot moving along route) */}
+            <g>
+              {/* Pulsing halo */}
+              <circle r="13" fill="rgba(34,197,94,0.20)">
+                <animate attributeName="r" from="6" to="16" dur="1.2s" repeatCount="indefinite"/>
+                <animate attributeName="opacity" from="0.9" to="0" dur="1.2s" repeatCount="indefinite"/>
+                <animateMotion dur="16s" repeatCount="indefinite" rotate="auto">
+                  <mpath xlinkHref="#routePath"/>
+                </animateMotion>
+              </circle>
+
+              {/* Runner icon (dot) */}
+              <circle r="6" fill="#EF4444" stroke="white" strokeWidth="2">
+                <animateMotion dur="16s" repeatCount="indefinite" rotate="auto">
+                  <mpath xlinkHref="#routePath"/>
+                </animateMotion>
+              </circle>
+            </g>
+
+            {/* Bottom caption */}
+            <text x="50%" y="525" textAnchor="middle" fontSize="14" fill="#4B5563" fontFamily="Inter">
+              Live route preview — the animated runner shows a typical 5K loop around UFV's core campus.
+            </text>
+          </svg>
+        </div>
+      </section>
+
       {/* Feature Highlights */}
       <div className="bg-ufv-dark text-white rounded-2xl p-12">
         <h3 className="text-3xl font-heading font-bold mb-8 text-center">Designed for Your Experience</h3>
