@@ -70,6 +70,78 @@ const HeroSection = ({ onNavigate }: { onNavigate: (page: Page) => void }) => (
         <div className="flex items-center gap-2"><Heart size={18} className="text-ufv-lightGreen" /> Community First, Always</div>
         <div className="flex items-center gap-2"><Users size={18} className="text-ufv-lightGreen" /> Free for Everyone</div>
       </div>
+
+      {/* Campus Illustration */}
+      <div className="mt-16 max-w-4xl mx-auto">
+        <svg className="w-full h-auto rounded-xl shadow-lg" viewBox="0 0 900 420" xmlns="http://www.w3.org/2000/svg">
+          {/* Sky Gradient */}
+          <defs>
+            <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stopColor="#E9F7E9"/>
+              <stop offset="100%" stopColor="#F1F6F1"/>
+            </linearGradient>
+          </defs>
+
+          <rect width="900" height="420" fill="url(#skyGrad)"/>
+
+          {/* Birds */}
+          <path d="M120 90 q8-6 16 0 M160 100 q8-6 16 0" stroke="#6E8F6E" strokeWidth="2" fill="none"/>
+          <path d="M700 80 q8-6 16 0 M740 90 q8-6 16 0" stroke="#6E8F6E" strokeWidth="2" fill="none"/>
+
+          {/* Background Hills */}
+          <path d="M0 280 Q200 190 400 250 T900 230 V420 H0 Z" fill="#CFEAD0"/>
+          <path d="M0 300 Q220 230 420 270 T900 260 V420 H0 Z" fill="#B4DBB5"/>
+
+          {/* Campus Buildings */}
+          {/* Building 1 */}
+          <rect x="110" y="170" width="150" height="90" fill="#DCE8DC" rx="8"/>
+          <rect x="125" y="185" width="120" height="12" fill="#C0D6C0"/>
+          <rect x="125" y="205" width="120" height="12" fill="#C0D6C0"/>
+          <rect x="125" y="225" width="120" height="12" fill="#C0D6C0"/>
+
+          {/* Building 2 */}
+          <rect x="300" y="150" width="170" height="110" fill="#DCE8DC" rx="8"/>
+          <rect x="320" y="165" width="130" height="12" fill="#C0D6C0"/>
+          <rect x="320" y="185" width="130" height="12" fill="#C0D6C0"/>
+          <rect x="320" y="205" width="130" height="12" fill="#C0D6C0"/>
+
+          {/* Building 3 */}
+          <rect x="520" y="160" width="140" height="95" fill="#DCE8DC" rx="8"/>
+          <rect x="540" y="175" width="100" height="12" fill="#C0D6C0"/>
+          <rect x="540" y="195" width="100" height="12" fill="#C0D6C0"/>
+          <rect x="540" y="215" width="100" height="12" fill="#C0D6C0"/>
+
+          {/* Trees */}
+          <circle cx="170" cy="250" r="24" fill="#0B9E43"/>
+          <circle cx="350" cy="245" r="24" fill="#0B9E43"/>
+          <circle cx="570" cy="250" r="24" fill="#0B9E43"/>
+          <circle cx="760" cy="245" r="24" fill="#0B9E43"/>
+          <circle cx="145" cy="270" r="18" fill="#0B9E43"/>
+          <circle cx="595" cy="270" r="18" fill="#0B9E43"/>
+
+          {/* Ground shading */}
+          <ellipse cx="450" cy="355" rx="410" ry="45" fill="#E0EFE0"/>
+
+          {/* Track Path */}
+          <path d="M60 345 C200 300, 350 330, 500 310 S800 350, 880 320"
+                stroke="#0B9E43" strokeWidth="12" fill="none" strokeLinecap="round" opacity="0.85"/>
+
+          {/* Runners' shadows */}
+          <ellipse cx="200" cy="333" rx="22" ry="6" fill="#000" opacity="0.15"/>
+          <ellipse cx="420" cy="323" rx="22" ry="6" fill="#000" opacity="0.15"/>
+          <ellipse cx="650" cy="330" rx="22" ry="6" fill="#000" opacity="0.15"/>
+
+          {/* Runners */}
+          <circle cx="200" cy="320" r="16" fill="#EF4444"/>
+          <circle cx="420" cy="310" r="16" fill="#3B82F6"/>
+          <circle cx="650" cy="315" r="16" fill="#F59E0B"/>
+
+          {/* Title */}
+          <text x="450" y="80" textAnchor="middle" fontSize="36" fill="#006341" fontFamily="Inter" fontWeight="600">
+            Welcome to the UFV Fun Run Community
+          </text>
+        </svg>
+      </div>
     </div>
   </div>
 );
