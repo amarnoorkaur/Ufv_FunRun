@@ -72,72 +72,137 @@ const HeroSection = ({ onNavigate }: { onNavigate: (page: Page) => void }) => (
       </div>
 
       {/* Campus Illustration */}
-      <div className="mt-16 max-w-4xl mx-auto">
-        <svg className="w-full h-auto rounded-xl shadow-lg" viewBox="0 0 900 420" xmlns="http://www.w3.org/2000/svg">
+      <div className="mt-16 max-w-6xl mx-auto">
+        <svg className="w-full h-auto rounded-xl shadow-lg" viewBox="0 0 1400 520" xmlns="http://www.w3.org/2000/svg">
           {/* Sky Gradient */}
           <defs>
-            <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+            <linearGradient id="heroSkyGrad" x1="0" y1="0" x2="0" y2="1">
               <stop offset="0%" stopColor="#E9F7E9"/>
               <stop offset="100%" stopColor="#F1F6F1"/>
             </linearGradient>
+            {/* Track path for runner animation */}
+            <path id="heroTrackPath" 
+                  d="M90 430 C350 370, 550 410, 750 390 S1200 440, 1340 400" 
+                  fill="none"/>
           </defs>
 
-          <rect width="900" height="420" fill="url(#skyGrad)"/>
+          <rect width="1400" height="520" fill="url(#heroSkyGrad)"/>
 
-          {/* Birds */}
-          <path d="M120 90 q8-6 16 0 M160 100 q8-6 16 0" stroke="#6E8F6E" strokeWidth="2" fill="none"/>
-          <path d="M700 80 q8-6 16 0 M740 90 q8-6 16 0" stroke="#6E8F6E" strokeWidth="2" fill="none"/>
+          {/* Birds with gentle animation */}
+          <g>
+            <path d="M180 110 q10-7 20 0 M220 120 q10-7 20 0" stroke="#6E8F6E" strokeWidth="2" fill="none">
+              <animateTransform attributeName="transform" type="translate" values="0,0; 5,-3; 0,0" dur="2s" repeatCount="indefinite"/>
+            </path>
+            <path d="M1050 100 q10-7 20 0 M1090 110 q10-7 20 0" stroke="#6E8F6E" strokeWidth="2" fill="none">
+              <animateTransform attributeName="transform" type="translate" values="0,0; -5,-2; 0,0" dur="2.5s" repeatCount="indefinite"/>
+            </path>
+          </g>
 
           {/* Background Hills */}
-          <path d="M0 280 Q200 190 400 250 T900 230 V420 H0 Z" fill="#CFEAD0"/>
-          <path d="M0 300 Q220 230 420 270 T900 260 V420 H0 Z" fill="#B4DBB5"/>
+          <path d="M0 360 Q350 260 700 320 T1400 300 V520 H0 Z" fill="#CFEAD0"/>
+          <path d="M0 390 Q380 310 720 360 T1400 350 V520 H0 Z" fill="#B4DBB5"/>
 
           {/* Campus Buildings */}
           {/* Building 1 */}
-          <rect x="110" y="170" width="150" height="90" fill="#DCE8DC" rx="8"/>
-          <rect x="125" y="185" width="120" height="12" fill="#C0D6C0"/>
-          <rect x="125" y="205" width="120" height="12" fill="#C0D6C0"/>
-          <rect x="125" y="225" width="120" height="12" fill="#C0D6C0"/>
+          <rect x="160" y="230" width="200" height="110" fill="#DCE8DC" rx="10"/>
+          <rect x="180" y="255" width="160" height="16" fill="#C0D6C0"/>
+          <rect x="180" y="280" width="160" height="16" fill="#C0D6C0"/>
+          <rect x="180" y="305" width="160" height="16" fill="#C0D6C0"/>
 
           {/* Building 2 */}
-          <rect x="300" y="150" width="170" height="110" fill="#DCE8DC" rx="8"/>
-          <rect x="320" y="165" width="130" height="12" fill="#C0D6C0"/>
-          <rect x="320" y="185" width="130" height="12" fill="#C0D6C0"/>
-          <rect x="320" y="205" width="130" height="12" fill="#C0D6C0"/>
+          <rect x="450" y="200" width="230" height="130" fill="#DCE8DC" rx="10"/>
+          <rect x="475" y="225" width="180" height="18" fill="#C0D6C0"/>
+          <rect x="475" y="255" width="180" height="18" fill="#C0D6C0"/>
+          <rect x="475" y="285" width="180" height="18" fill="#C0D6C0"/>
 
           {/* Building 3 */}
-          <rect x="520" y="160" width="140" height="95" fill="#DCE8DC" rx="8"/>
-          <rect x="540" y="175" width="100" height="12" fill="#C0D6C0"/>
-          <rect x="540" y="195" width="100" height="12" fill="#C0D6C0"/>
-          <rect x="540" y="215" width="100" height="12" fill="#C0D6C0"/>
+          <rect x="780" y="220" width="200" height="120" fill="#DCE8DC" rx="10"/>
+          <rect x="805" y="245" width="150" height="16" fill="#C0D6C0"/>
+          <rect x="805" y="270" width="150" height="16" fill="#C0D6C0"/>
+          <rect x="805" y="295" width="150" height="16" fill="#C0D6C0"/>
 
-          {/* Trees */}
-          <circle cx="170" cy="250" r="24" fill="#0B9E43"/>
-          <circle cx="350" cy="245" r="24" fill="#0B9E43"/>
-          <circle cx="570" cy="250" r="24" fill="#0B9E43"/>
-          <circle cx="760" cy="245" r="24" fill="#0B9E43"/>
-          <circle cx="145" cy="270" r="18" fill="#0B9E43"/>
-          <circle cx="595" cy="270" r="18" fill="#0B9E43"/>
+          {/* Trees with subtle sway animation */}
+          <g>
+            <circle cx="230" cy="330" r="32" fill="#0B9E43">
+              <animateTransform attributeName="transform" type="scale" values="1,1; 1.02,0.98; 1,1" dur="3s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="500" cy="330" r="32" fill="#0B9E43">
+              <animateTransform attributeName="transform" type="scale" values="1,1; 0.98,1.02; 1,1" dur="3.5s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="850" cy="330" r="32" fill="#0B9E43">
+              <animateTransform attributeName="transform" type="scale" values="1,1; 1.02,0.98; 1,1" dur="2.8s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="1150" cy="330" r="32" fill="#0B9E43">
+              <animateTransform attributeName="transform" type="scale" values="1,1; 0.98,1.02; 1,1" dur="3.2s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="200" cy="360" r="24" fill="#0B9E43"/>
+            <circle cx="875" cy="360" r="24" fill="#0B9E43"/>
+          </g>
 
           {/* Ground shading */}
-          <ellipse cx="450" cy="355" rx="410" ry="45" fill="#E0EFE0"/>
+          <ellipse cx="700" cy="450" rx="620" ry="60" fill="#E0EFE0"/>
 
           {/* Track Path */}
-          <path d="M60 345 C200 300, 350 330, 500 310 S800 350, 880 320"
-                stroke="#0B9E43" strokeWidth="12" fill="none" strokeLinecap="round" opacity="0.85"/>
+          <path d="M90 430 C350 370, 550 410, 750 390 S1200 440, 1340 400"
+                stroke="#0B9E43" strokeWidth="14" fill="none" strokeLinecap="round" opacity="0.90"/>
 
-          {/* Runners' shadows */}
-          <ellipse cx="200" cy="333" rx="22" ry="6" fill="#000" opacity="0.15"/>
-          <ellipse cx="420" cy="323" rx="22" ry="6" fill="#000" opacity="0.15"/>
-          <ellipse cx="650" cy="330" rx="22" ry="6" fill="#000" opacity="0.15"/>
+          {/* Animated Runners */}
+          {/* Runner 1 - Red */}
+          <g>
+            <ellipse rx="30" ry="8" fill="#000" opacity="0.15">
+              <animateMotion dur="12s" repeatCount="indefinite">
+                <mpath xlinkHref="#heroTrackPath"/>
+              </animateMotion>
+              <animate attributeName="ry" values="8;6;8" dur="0.3s" repeatCount="indefinite"/>
+            </ellipse>
+          </g>
+          <g>
+            <circle r="20" fill="#EF4444">
+              <animateMotion dur="12s" repeatCount="indefinite">
+                <mpath xlinkHref="#heroTrackPath"/>
+              </animateMotion>
+              <animate attributeName="cy" values="0;-5;0" dur="0.3s" repeatCount="indefinite"/>
+            </circle>
+          </g>
 
-          {/* Runners */}
-          <circle cx="200" cy="320" r="16" fill="#EF4444"/>
-          <circle cx="420" cy="310" r="16" fill="#3B82F6"/>
-          <circle cx="650" cy="315" r="16" fill="#F59E0B"/>
+          {/* Runner 2 - Blue (offset start) */}
+          <g>
+            <ellipse rx="30" ry="8" fill="#000" opacity="0.15">
+              <animateMotion dur="14s" repeatCount="indefinite" begin="-4s">
+                <mpath xlinkHref="#heroTrackPath"/>
+              </animateMotion>
+              <animate attributeName="ry" values="8;6;8" dur="0.35s" repeatCount="indefinite"/>
+            </ellipse>
+          </g>
+          <g>
+            <circle r="20" fill="#3B82F6">
+              <animateMotion dur="14s" repeatCount="indefinite" begin="-4s">
+                <mpath xlinkHref="#heroTrackPath"/>
+              </animateMotion>
+              <animate attributeName="cy" values="0;-5;0" dur="0.35s" repeatCount="indefinite"/>
+            </circle>
+          </g>
+
+          {/* Runner 3 - Orange (offset start) */}
+          <g>
+            <ellipse rx="30" ry="8" fill="#000" opacity="0.15">
+              <animateMotion dur="16s" repeatCount="indefinite" begin="-8s">
+                <mpath xlinkHref="#heroTrackPath"/>
+              </animateMotion>
+              <animate attributeName="ry" values="8;6;8" dur="0.32s" repeatCount="indefinite"/>
+            </ellipse>
+          </g>
+          <g>
+            <circle r="20" fill="#F59E0B">
+              <animateMotion dur="16s" repeatCount="indefinite" begin="-8s">
+                <mpath xlinkHref="#heroTrackPath"/>
+              </animateMotion>
+              <animate attributeName="cy" values="0;-5;0" dur="0.32s" repeatCount="indefinite"/>
+            </circle>
+          </g>
 
           {/* Title */}
-          <text x="450" y="80" textAnchor="middle" fontSize="36" fill="#006341" fontFamily="Inter" fontWeight="600">
+          <text x="700" y="110" textAnchor="middle" fontSize="48" fill="#006341" fontFamily="Inter" fontWeight="600">
             Welcome to the UFV Fun Run Community
           </text>
         </svg>
