@@ -2203,7 +2203,7 @@ const AppMockup = () => (
         <div className="text-center mb-10">
           <h3 className="text-3xl md:text-4xl font-heading font-bold text-ufv-dark mb-4">Live Route Preview</h3>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            See a simulated 5KM loop around UFV's core campus. The moving dot represents a typical runner completing the Fun Run route—no GPS required, just distance and time tracking.
+            See a simulated 5KM loop around UFV's core campus. The moving dot represents a typical runner completing the Fun Run route. No GPS required, just distance and time tracking.
           </p>
         </div>
         
