@@ -38,7 +38,7 @@ export interface DonationItem {
   title: string;
   category: 'fitness' | 'books' | 'clothing' | 'appliances' | 'other';
   description: string;
-  condition: 'new' | 'like-new' | 'good' | 'fair';
+  condition: 'new' | 'likeNew' | 'good' | 'fair';
   donorName: string;
   donorAvatar: string;
   postedDate: string;
@@ -52,7 +52,7 @@ export interface CommunityPost {
   authorAvatar: string;
   title: string;
   content: string;
-  category: 'success-story' | 'mental-health' | 'seeking-advice' | 'tips' | 'motivation';
+  category: 'successStory' | 'mentalHealth' | 'seekingAdvice' | 'tips' | 'motivation';
   likes: number;
   comments: Comment[];
   postedDate: string;

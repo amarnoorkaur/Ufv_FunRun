@@ -88,7 +88,7 @@ const AboutInitiative = () => (
           At UFV Fun-Run, we believe that <strong>health, connection, and community belong to everyone</strong>, not just a few. This project was born out of a commitment to build something that serves our entire UFV family: students, staff, alumni, and local partners.
         </p>
         <p>
-          We're dedicated to creating a space where every runner, regardless of their fitness level, schedule, or background, feels welcome, supported, and empowered. Because when we run together, we don't just build endurance — <em>we build relationships, belonging, and a healthier, stronger community</em>.
+          We're dedicated to creating a space where every runner, regardless of their fitness level, schedule, or background, feels welcome, supported, and empowered. Because when we run together, we don't just build endurance, <em>we build relationships, belonging, and a healthier, stronger community</em>.
         </p>
         
         <div className="bg-ufv-light p-8 rounded-ufv border-l-8 border-ufv-green shadow-soft">
@@ -107,11 +107,11 @@ const AboutInitiative = () => (
       <div className="mt-16 grid md:grid-cols-2 gap-8">
         <div className="bg-gray-50 p-8 rounded-ufv border border-gray-200">
           <p className="text-gray-600 italic mb-4">"As a first-year student, I felt isolated on campus. Joining the Saturday run helped me make friends and feel like I actually belong here."</p>
-          <p className="text-sm font-bold text-ufv-green">— Sarah, Computer Science Student</p>
+          <p className="text-sm font-bold text-ufv-green">Sarah, Computer Science Student</p>
         </div>
         <div className="bg-gray-50 p-8 rounded-ufv border border-gray-200">
           <p className="text-gray-600 italic mb-4">"I love that this app doesn't try to sell me anything or track my every move. It just helps me stay active with my colleagues."</p>
-          <p className="text-sm font-bold text-ufv-green">— Michael, UFV Staff Member</p>
+          <p className="text-sm font-bold text-ufv-green">Michael, UFV Staff Member</p>
         </div>
       </div>
 
@@ -136,7 +136,7 @@ const AboutInitiative = () => (
               <div>
                 <h4 className="text-xl font-heading font-bold text-ufv-dark mb-2">Addressing Community Skepticism</h4>
                 <p className="text-gray-600 leading-relaxed">
-                  Yes, this project received provincial funding from David Eby's government. We understand that raises questions. But here's the truth: this is one of <strong>dozens of community wellness grants</strong> distributed across BC to non-profit organizations. It's not a political campaign tool—it's a public health investment, managed locally by UFV students, staff, and faculty.
+                  Yes, this project received provincial funding from David Eby's government. We understand that raises questions. But here's the truth: this is one of <strong>dozens of community wellness grants</strong> distributed across BC to non-profit organizations. It's not a political campaign tool. It's a public health investment, managed locally by UFV students, staff, and faculty.
                 </p>
               </div>
             </div>
@@ -150,7 +150,7 @@ const AboutInitiative = () => (
               <div>
                 <h4 className="text-xl font-heading font-bold text-ufv-dark mb-2">Complete Political Neutrality</h4>
                 <p className="text-gray-600 leading-relaxed">
-                  Zero political messaging. Zero campaign content. Zero partisan influence. Our governance board includes student representatives, faculty advisors, and community partners—<strong>no politicians</strong>. Decisions are made democratically by our community, not by any political office.
+                  Zero political messaging. Zero campaign content. Zero partisan influence. Our governance board includes student representatives, faculty advisors, and community partners. <strong>No politicians</strong>. Decisions are made democratically by our community, not by any political office.
                 </p>
               </div>
             </div>
@@ -178,7 +178,7 @@ const AboutInitiative = () => (
               <div>
                 <h4 className="text-xl font-heading font-bold text-ufv-dark mb-2">User Control & Democratic Decision-Making</h4>
                 <p className="text-gray-600 leading-relaxed">
-                  Major features and policies are decided by <strong>community vote</strong>. Your voice matters. You're not just a user—you're a stakeholder. We practice genuine participatory design, where students and community members shape the app's direction.
+                  Major features and policies are decided by <strong>community vote</strong>. Your voice matters. You're not just a user, you're a stakeholder. We practice genuine participatory design, where students and community members shape the app's direction.
                 </p>
               </div>
             </div>
@@ -254,28 +254,28 @@ const Ethics = ({ onNavigate }: { onNavigate?: (page: Page) => void }) => {
     },
     {
       title: "Designed for Our UFV Culture",
-      description: "Inclusive. Respectful. Community-rooted. We honor the identity of UFV and the land we live on — not corporate 'hustle culture.'",
+      description: "Inclusive. Respectful. Community rooted. We honor the identity of UFV and the land we live on, not corporate 'hustle culture.'",
       feature: "Saturday Fun-Runs built around campus life and local traditions",
       icon: Globe,
       color: "green"
     },
     {
       title: "Built for Public Good, Not Profit",
-      description: "No shareholders. No ads. No selling your data. This is a public initiative created to serve the community — not exploit it.",
+      description: "No shareholders. No ads. No selling your data. This is a public initiative created to serve the community, not exploit it.",
       feature: "100% free forever with transparent, non-profit governance",
       icon: Heart,
       color: "red"
     },
     {
       title: "Your Rights Come First",
-      description: "We will NEVER use your data in a way that disrespects your autonomy. Privacy is not a feature — it's a duty we take seriously.",
+      description: "We will NEVER use your data in a way that disrespects your autonomy. Privacy is not a feature. It's a duty we take seriously.",
       feature: "Local-first data storage with full export and delete controls",
       icon: ShieldCheck,
       color: "purple"
     },
     {
       title: "Built for Everyday Joy and Connection",
-      description: "Fun-Run is designed to give you immediate joy, connection, and a sense of achievement — every time you participate.",
+      description: "Fun Run is designed to give you immediate joy, connection, and a sense of achievement, every time you participate.",
       feature: "Instant endorphin boost through community runs and celebrations",
       icon: Smile,
       color: "yellow"
@@ -289,14 +289,14 @@ const Ethics = ({ onNavigate }: { onNavigate?: (page: Page) => void }) => {
     },
     {
       title: "Fairness at Every Step",
-      description: "Every member gets equal access to resources, opportunities, and support — no matter their background, income, or ability.",
+      description: "Every member gets equal access to resources, opportunities, and support, no matter their background, income, or ability.",
       feature: "No paywalls, premium tiers, or exclusive features",
       icon: Scale,
       color: "teal"
     },
     {
       title: "We Lead with Character",
-      description: "Kindness, honesty, and respect shape everything we design. Technology should help us become better humans — not distract us from being one.",
+      description: "Kindness, honesty, and respect shape everything we design. Technology should help us become better humans, not distract us from being one.",
       feature: "Community Stories that celebrate growth, resilience, and support",
       icon: Award,
       color: "orange"
@@ -322,13 +322,13 @@ const Ethics = ({ onNavigate }: { onNavigate?: (page: Page) => void }) => {
       avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop"
     },
     {
-      quote: "As someone with a disability, I've been excluded from so many wellness apps. This one actually thought about people like me. The accessibility features aren't an afterthought — they're built in.",
+      quote: "As someone with a disability, I've been excluded from so many wellness apps. This one actually thought about people like me. The accessibility features aren't an afterthought. They're built in.",
       name: "Jordan",
       role: "Graduate Student, Education",
       avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop"
     },
     {
-      quote: "I love that my data isn't being sold to advertisers. For once, I feel like the product isn't ME — it's actually the service helping me.",
+      quote: "I love that my data isn't being sold to advertisers. For once, I feel like the product isn't ME. It's actually the service helping me.",
       name: "Aisha",
       role: "UFV Staff Member",
       avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop"
@@ -373,7 +373,7 @@ const Ethics = ({ onNavigate }: { onNavigate?: (page: Page) => void }) => {
               We started building Fun-Run because we were tired of wellness apps that made us feel <em>worse</em> about ourselves. Apps that tracked our every move, sold our data, and pressured us to compete.
             </p>
             <p>
-              We wanted something different. Something built by students, for students. Something that celebrates showing up — not just showing off.
+              We wanted something different. Something built by students, for students. Something that celebrates showing up, not just showing off.
             </p>
             <p className="text-white font-medium">
               This is technology that respects you. Wellness that welcomes everyone. A community that cares.
@@ -510,7 +510,7 @@ const Ethics = ({ onNavigate }: { onNavigate?: (page: Page) => void }) => {
               </div>
               
               <h3 className="text-2xl md:text-3xl font-heading font-bold mb-6 leading-snug max-w-3xl mx-auto">
-                Ethics isn't a checkbox for us — it's the standard we're building toward every single day.
+                Ethics isn't a checkbox for us. It's the standard we're building toward every single day.
               </h3>
               
               <p className="text-lg text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed">
@@ -573,7 +573,7 @@ const Impact = () => (
         <div>
           <h2 className="text-4xl font-heading font-bold mb-8 text-white">Community Impact</h2>
           <p className="text-lg text-gray-300 mb-10 leading-relaxed font-light">
-            Imagine a UFV campus where wellness isn't a side note. Every Saturday, students and staff lace up their running shoes, not for competition, but for community. Every step counts — for your health, your friends, your campus, and your future.
+            Imagine a UFV campus where wellness isn't a side note. Every Saturday, students and staff lace up their running shoes, not for competition, but for community. Every step counts: for your health, your friends, your campus, and your future.
           </p>
           
           <div className="space-y-8">
@@ -712,8 +712,8 @@ const Privacy = () => (
               <h3 className="text-xl font-heading font-bold text-ufv-dark mb-3">What We Collect (Only the Essentials)</h3>
               <ul className="list-disc pl-5 text-gray-600 space-y-2">
                 <li>Account credentials (encrypted and secure).</li>
-                <li>Distance and time — to help you track your personal progress.</li>
-                <li>Self-reported mood scores (completely optional).</li>
+                <li>Distance and time to help you track your personal progress.</li>
+                <li>Self reported mood scores (completely optional).</li>
               </ul>
               <p className="mt-4 text-sm text-ufv-green font-medium">You always stay in control: you choose what to share.</p>
             </div>
@@ -962,7 +962,7 @@ const GiveHub = () => {
                     </span>
                     <span className={`px-2 py-1 rounded text-xs font-medium ${
                       item.condition === 'new' ? 'bg-green-100 text-green-700' :
-                      item.condition === 'like-new' ? 'bg-teal-100 text-teal-700' :
+                      item.condition === 'likeNew' ? 'bg-teal-100 text-teal-700' :
                       item.condition === 'good' ? 'bg-blue-100 text-blue-700' :
                       'bg-gray-100 text-gray-700'
                     }`}>
@@ -1032,9 +1032,9 @@ const CommunityStories = () => {
 
   const filters = [
     { id: 'all', label: 'All Posts' },
-    { id: 'success-story', label: 'Success Stories' },
-    { id: 'mental-health', label: 'Mental Health' },
-    { id: 'seeking-advice', label: 'Seeking Advice' },
+    { id: 'successStory', label: 'Success Stories' },
+    { id: 'mentalHealth', label: 'Mental Health' },
+    { id: 'seekingAdvice', label: 'Seeking Advice' },
     { id: 'tips', label: 'Tips & Tricks' },
     { id: 'motivation', label: 'Motivation' },
   ];
@@ -1045,9 +1045,9 @@ const CommunityStories = () => {
 
   const getCategoryStyle = (category: string) => {
     switch(category) {
-      case 'success-story': return 'bg-green-100 text-green-700';
-      case 'mental-health': return 'bg-purple-100 text-purple-700';
-      case 'seeking-advice': return 'bg-orange-100 text-orange-700';
+      case 'successStory': return 'bg-green-100 text-green-700';
+      case 'mentalHealth': return 'bg-purple-100 text-purple-700';
+      case 'seekingAdvice': return 'bg-orange-100 text-orange-700';
       case 'tips': return 'bg-blue-100 text-blue-700';
       case 'motivation': return 'bg-pink-100 text-pink-700';
       default: return 'bg-gray-100 text-gray-700';
@@ -1055,7 +1055,8 @@ const CommunityStories = () => {
   };
 
   const getCategoryLabel = (category: string) => {
-    return category.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+    // Convert camelCase to Title Case with spaces
+    return category.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase()).trim();
   };
 
   return (
@@ -1301,7 +1302,7 @@ const AboutGrant = () => (
             </div>
             <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
               <p className="font-bold text-ufv-dark mb-2">❓ "Will my data be shared with the government?"</p>
-              <p className="text-gray-600 text-sm">Absolutely not. Your data stays private. The government has no access to user data—none. Full stop.</p>
+              <p className="text-gray-600 text-sm">Absolutely not. Your data stays private. The government has no access to user data. None. Full stop.</p>
             </div>
             <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
               <p className="font-bold text-ufv-dark mb-2">❓ "Who really controls this project?"</p>

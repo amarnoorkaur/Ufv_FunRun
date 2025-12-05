@@ -24,15 +24,15 @@ export const ETHICAL_THEORIES: EthicalTheory[] = [
     name: 'Divine Command',
     pageNumber: 61,
     concept: 'Higher Authority/Creator.',
-    application: 'We honor the "Higher Mandate" of Public Service. Our "creator" (the non-profit initiative funded by the Province) commands us to prioritize well-being over profit.',
+    application: 'We honor the "Higher Mandate" of Public Service. Our "creator" (the nonprofit initiative funded by the Province) commands us to prioritize wellbeing over profit.',
     icon: 'Scale'
   },
   {
     id: '4',
     name: 'Ethical Egoism',
     pageNumber: 64,
-    concept: 'Self-interest.',
-    application: 'It is rational to act in your self-interest by improving your cardiovascular health. We appeal to your desire for a longer, healthier life.',
+    concept: 'Personal interest.',
+    application: 'It is rational to act in your self interest by improving your cardiovascular health. We appeal to your desire for a longer, healthier life.',
     icon: 'Activity'
   },
   {
@@ -80,7 +80,7 @@ export const ETHICAL_THEORIES: EthicalTheory[] = [
     name: 'Virtue Ethics',
     pageNumber: 88,
     concept: 'Character, Honesty, Reasoning.',
-    application: 'We encourage the virtues of consistency (streaks), honesty (self-reported times), and courage (starting the run). The app builds character, not just muscle.',
+    application: 'We encourage the virtues of consistency (streaks), honesty (self reported times), and courage (starting the run). The app builds character, not just muscle.',
     icon: 'Heart'
   }
 ];
@@ -95,7 +95,7 @@ export const THEORY_FEATURE_MAPPINGS: TheoryFeatureMapping[] = [
     theoryName: 'Subjective Relativism',
     features: [
       'No judgment algorithms: The app never labels your performance as "good" or "bad"',
-      'Personal goal-setting: You define success on your own terms',
+      'Personal goal setting: You define success on your own terms',
       'Optional sharing: Choose what you share with the community, if anything'
     ]
   },
@@ -103,7 +103,7 @@ export const THEORY_FEATURE_MAPPINGS: TheoryFeatureMapping[] = [
     theoryName: 'Cultural Relativism',
     features: [
       'Aligned with UFV campus values: Inclusivity, respect, and land acknowledgement',
-      'Saturday Fun-Runs reflect local community culture, not Silicon Valley "hustle"',
+      'Saturday Fun Runs reflect local community culture, not Silicon Valley "hustle"',
       'Designed for Fraser Valley climate, geography, and multicultural community'
     ]
   },
@@ -112,13 +112,13 @@ export const THEORY_FEATURE_MAPPINGS: TheoryFeatureMapping[] = [
     features: [
       'Governed by a "higher mandate" of public service, not profit',
       'Our funding source (provincial grant) commands us to serve the public good',
-      'Service-first architecture: Every feature asks "does this help our community?"'
+      'Service first architecture: Every feature asks "does this help our community?"'
     ]
   },
   {
     theoryName: 'Ethical Egoism',
     features: [
-      'Health benefits directly serve your self-interest: better cardiovascular fitness, mood, energy',
+      'Health benefits directly serve your self interest: better cardiovascular fitness, mood, energy',
       'Personal progress tracking helps you achieve your individual goals',
       'Your participation makes you healthier, happier, and more connected'
     ]
@@ -127,14 +127,14 @@ export const THEORY_FEATURE_MAPPINGS: TheoryFeatureMapping[] = [
     theoryName: 'Kantianism',
     features: [
       'We treat you as an end in yourself, never merely as a means to profit',
-      'Categorical imperative: "Never sell user data" because universal data-selling would destroy trust',
+      'Categorical imperative: "Never sell user data" because universal data selling would destroy trust',
       'Respect for autonomy: You always control your data, your pace, your participation'
     ]
   },
   {
     theoryName: 'Act Utilitarianism',
     features: [
-      'Saturday Fun-Runs maximize immediate happiness for the greatest number',
+      'Saturday Fun Runs maximize immediate happiness for the greatest number',
       'Instant endorphin boost and social connection each week',
       'GiveHub provides immediate utility by matching needs with resources'
     ]
@@ -142,8 +142,8 @@ export const THEORY_FEATURE_MAPPINGS: TheoryFeatureMapping[] = [
   {
     theoryName: 'Rule Utilitarianism',
     features: [
-      'Strict privacy rules create long-term safety and happiness for everyone',
-      'No-advertising policy prevents the gradual erosion of user trust',
+      'Strict privacy rules create long term safety and happiness for everyone',
+      'No advertising policy prevents the gradual erosion of user trust',
       'Transparent governance rules ensure accountability and fairness over time'
     ]
   },
@@ -160,13 +160,13 @@ export const THEORY_FEATURE_MAPPINGS: TheoryFeatureMapping[] = [
     features: [
       'Designed for the least advantaged: works on old phones, uses minimal data',
       'Equal features for everyone: no premium tiers or paywalls',
-      'Accessibility-first: screen readers, high contrast, multiple languages'
+      'Accessibility first: screen readers, high contrast, multiple languages'
     ]
   },
   {
     theoryName: 'Virtue Ethics',
     features: [
-      'Encourages virtues: consistency (streaks), courage (starting), honesty (self-reporting)',
+      'Encourages virtues: consistency (streaks), courage (starting), honesty (self reporting)',
       'Community Stories celebrate character development and resilience',
       'The app builds moral habits, not just physical fitness'
     ]
@@ -175,12 +175,12 @@ export const THEORY_FEATURE_MAPPINGS: TheoryFeatureMapping[] = [
 
 export const FAQS: FaqItem[] = [
   {
-    question: "Who is the Fun-Run for?",
+    question: "Who is the FunRun for?",
     answer: "Everyone connected to UFV: students, staff, alumni, and local community partners. We built this for the entire UFV family, regardless of fitness level, background, or role. Everyone belongs here."
   },
   {
     question: "Is the app really free?",
-    answer: "Yes, completely free forever. No premium tiers, no micro-transactions, no ads, no hidden paywalls. Equal access for everyone is not just a feature — it's a core value."
+    answer: "Yes, completely free forever. No premium tiers, no micro transactions, no ads, no hidden paywalls. Equal access for everyone is not just a feature, it's a core value."
   },
   {
     question: "Is my data safe?",
@@ -188,11 +188,11 @@ export const FAQS: FaqItem[] = [
   },
   {
     question: "Why should I trust a project connected to politics?",
-    answer: "Great question! While the provincial government provided the funding, this project is completely non-partisan and community-governed. David Eby's office funded dozens of community wellness initiatives across BC; we're one of many. The app is managed by UFV students, staff, and faculty with full transparency. No political messaging, no campaign content, just community wellness. Our governance board includes student representatives who vote on all major decisions."
+    answer: "Great question! While the provincial government provided the funding, this project is completely nonpartisan and community governed. David Eby's office funded dozens of community wellness initiatives across BC; we're one of many. The app is managed by UFV students, staff, and faculty with full transparency. No political messaging, no campaign content, just community wellness. Our governance board includes student representatives who vote on all major decisions."
   },
   {
     question: "How does this app avoid unfair competition or pressure?",
-    answer: "We're explicitly designed to be non-competitive and judgment-free. There are no public leaderboards that rank runners against each other. You can choose to share your stats or keep them completely private. Challenges are optional and focus on personal goals, not beating others. We celebrate participation, not perfection. Whether you walk, jog, or run, you're equally valued in our community."
+    answer: "We're explicitly designed to be noncompetitive and judgment free. There are no public leaderboards that rank runners against each other. You can choose to share your stats or keep them completely private. Challenges are optional and focus on personal goals, not beating others. We celebrate participation, not perfection. Whether you walk, jog, or run, you're equally valued in our community."
   },
   {
     question: "How is GiveHub sustainable and equitable?",
@@ -200,7 +200,7 @@ export const FAQS: FaqItem[] = [
   },
   {
     question: "How is my privacy protected beyond legal requirements?",
-    answer: "We go far beyond minimum legal compliance. Your running data is stored locally on your device by default. GPS traces are never saved permanently. We use end-to-end encryption for all communications. We've implemented 'privacy by design' principles, meaning we simply don't collect data we don't absolutely need. You can export or delete all your data anytime with one tap. No third-party trackers, no analytics companies, no data brokers. Period."
+    answer: "We go far beyond minimum legal compliance. Your running data is stored locally on your device by default. GPS traces are never saved permanently. We use end to end encryption for all communications. We've implemented 'privacy by design' principles, meaning we simply don't collect data we don't absolutely need. You can export or delete all your data anytime with one tap. No third party trackers, no analytics companies, no data brokers. Period."
   },
   {
     question: "What makes this app more ethical than commercial fitness apps?",
@@ -208,11 +208,11 @@ export const FAQS: FaqItem[] = [
   },
   {
     question: "Where exactly do profits or savings go?",
-    answer: "This is a non-profit initiative. We have no profits. The provincial grant covers development and maintenance costs. Any extra funds from optional donations or merchandise sales go directly into: (1) Student wellness program scholarships, (2) Mental health resources on campus, (3) Supporting local Fraser Valley businesses that partner with us, and (4) Maintaining free access for everyone forever. Complete financial transparency reports are published quarterly on our website."
+    answer: "This is a nonprofit initiative. We have no profits. The provincial grant covers development and maintenance costs. Any extra funds from optional donations or merchandise sales go directly into: (1) Student wellness program scholarships, (2) Mental health resources on campus, (3) Supporting local Fraser Valley businesses that partner with us, and (4) Maintaining free access for everyone forever. Complete financial transparency reports are published quarterly on our website."
   },
   {
     question: "How does this project ensure equal participation?",
-    answer: "Accessibility is built into every feature. The app works on older phones, uses minimal data, and doesn't require expensive wearables. All Saturday runs offer multiple distance options (1K, 3K, 5K) and walking groups. We provide accommodations for users with disabilities, including audio cues and high-contrast modes. Language support includes English, Punjabi, and Mandarin to reflect our diverse community. Financial barriers are eliminated: no fees, no equipment requirements, no hidden costs."
+    answer: "Accessibility is built into every feature. The app works on older phones, uses minimal data, and doesn't require expensive wearables. All Saturday runs offer multiple distance options (1K, 3K, 5K) and walking groups. We provide accommodations for users with disabilities, including audio cues and high contrast modes. Language support includes English, Punjabi, and Mandarin to reflect our diverse community. Financial barriers are eliminated: no fees, no equipment requirements, no hidden costs."
   },
   {
     question: "Do I need special equipment?",
@@ -220,7 +220,7 @@ export const FAQS: FaqItem[] = [
   },
   {
     question: "How can I get more involved?",
-    answer: "We'd love that! You can become a Run Leader, volunteer at events, or partner with us if you're a local business. This is a community-built initiative — your participation, feedback, and trust truly matter."
+    answer: "We'd love that! You can become a Run Leader, volunteer at events, or partner with us if you're a local business. This is a community built initiative. Your participation, feedback, and trust truly matter."
   }
 ];
 
@@ -232,7 +232,7 @@ export const SAMPLE_DONATIONS: DonationItem[] = [
     title: 'Yoga Mat (Purple)',
     category: 'fitness',
     description: 'Lightly used yoga mat, perfect for beginners. Cleaned and ready for a new home!',
-    condition: 'like-new',
+    condition: 'likeNew',
     donorName: 'Emma T.',
     donorAvatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop',
     postedDate: '2 days ago',
@@ -256,7 +256,7 @@ export const SAMPLE_DONATIONS: DonationItem[] = [
     title: 'Running Shoes (Size 10)',
     category: 'fitness',
     description: 'Nike running shoes, worn only a few times. Great for the Saturday Fun Runs!',
-    condition: 'like-new',
+    condition: 'likeNew',
     donorName: 'Priya S.',
     donorAvatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop',
     postedDate: '3 days ago',
@@ -308,7 +308,7 @@ export const SAMPLE_COMMUNITY_POSTS: CommunityPost[] = [
     authorAvatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop',
     title: 'Running saved me from depression. Here is my story.',
     content: 'Two years ago, I was in a really dark place. Failed courses, lost friends, and felt completely alone. A friend dragged me to my first Saturday Fun Run, and I could barely finish 1km. But something clicked. The community welcomed me without judgment. Week by week, I got stronger, not just physically but mentally. Running became my therapy. Today, I completed my first 10K and I have a support system I never knew I needed. If you are struggling, please give it a try. You are not alone.',
-    category: 'success-story',
+    category: 'successStory',
     likes: 234,
     postedDate: '2 days ago',
     comments: [
@@ -336,7 +336,7 @@ export const SAMPLE_COMMUNITY_POSTS: CommunityPost[] = [
     authorAvatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop',
     title: 'How do you deal with anxiety before exams? Looking for advice.',
     content: 'Finals are coming up and my anxiety is through the roof. I have been trying to keep up with running but some days it feels impossible to even get out of bed. Does anyone have tips for managing exam stress while staying active? I feel like if I stop running, things will get worse, but I am so exhausted.',
-    category: 'seeking-advice',
+    category: 'seekingAdvice',
     likes: 89,
     postedDate: '5 hours ago',
     comments: [
@@ -384,7 +384,7 @@ export const SAMPLE_COMMUNITY_POSTS: CommunityPost[] = [
     authorAvatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop',
     title: 'Dealing with a knee injury. How to stay positive?',
     content: 'I twisted my knee last week and the doctor said no running for at least a month. I am really struggling because running was my main way of managing stress. Has anyone been through this? How did you stay active and positive during recovery?',
-    category: 'mental-health',
+    category: 'mentalHealth',
     likes: 67,
     postedDate: '3 days ago',
     comments: [
