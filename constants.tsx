@@ -187,12 +187,24 @@ export const FAQS: FaqItem[] = [
     answer: "Absolutely. We only collect what's strictly necessary: distance, time, and your personal tracking data. We will never sell your data, run ads, or share your information without your explicit consent. You always stay in control of what you share."
   },
   {
-    question: "Why should I trust a project connected to politics?",
-    answer: "Great question! While the provincial government provided the funding, this project is completely nonpartisan and community governed. David Eby's office funded dozens of community wellness initiatives across BC; we're one of many. The app is managed by UFV students, staff, and faculty with full transparency. No political messaging, no campaign content, just community wellness. Our governance board includes student representatives who vote on all major decisions."
+    question: "Does the Fun Run track my location?",
+    answer: "No. We never track or store your GPS location. The app only records distance traveled and time elapsed. Your running routes, locations, and movement patterns are never collected, stored, or transmitted. This is a core privacy commitment. We measure your progress without surveillance."
   },
   {
-    question: "How does this app avoid unfair competition or pressure?",
-    answer: "We're explicitly designed to be noncompetitive and judgment free. There are no public leaderboards that rank runners against each other. You can choose to share your stats or keep them completely private. Challenges are optional and focus on personal goals, not beating others. We celebrate participation, not perfection. Whether you walk, jog, or run, you're equally valued in our community."
+    question: "Why should I trust a publicly funded tech project?",
+    answer: "Great question! While the provincial government provided the funding, this project is completely nonpartisan and community governed. Here's why you can trust us: (1) All finances are published quarterly with full transparency, (2) A community governance board with elected student representatives makes all major decisions, (3) No politicians or government officials have access to user data or app decisions, (4) Our nonprofit structure means no profit motive to exploit users, and (5) You can audit our code, finances, and policies anytime. We earn trust through transparency, not through marketing."
+  },
+  {
+    question: "How does the app prevent unhealthy competition?",
+    answer: "We're explicitly designed to be noncompetitive and judgment free. There are no public leaderboards that rank runners against each other. You can choose to share your stats or keep them completely private. Challenges are optional and focus on personal goals, not beating others. We celebrate participation, not perfection. Whether you walk, jog, or run, you're equally valued in our community. The app uses encouraging language instead of shame-based motivation."
+  },
+  {
+    question: "How does the app stay free forever?",
+    answer: "The provincial Community Wellness Grant covers initial development and maintenance. Beyond that, our sustainability model includes: (1) No expensive features that require constant updates, (2) Minimal hosting costs through efficient design, (3) UFV institutional support for long term maintenance, (4) Optional community donations (never required), and (5) No shareholders or investors demanding returns. We built this to last, not to generate profit."
+  },
+  {
+    question: "What makes this app more ethical than commercial fitness apps?",
+    answer: "Commercial apps optimize for engagement and profit, which often means addictive design patterns, social pressure, and data harvesting. We optimize for your genuine wellbeing. We don't use psychological tricks to keep you scrolling. We don't sell your data. We don't create artificial FOMO or pressure. Our success is measured by community health outcomes and user satisfaction, not by quarterly revenue or growth metrics. We answer to our community, not shareholders."
   },
   {
     question: "How is GiveHub sustainable and equitable?",
@@ -201,10 +213,6 @@ export const FAQS: FaqItem[] = [
   {
     question: "How is my privacy protected beyond legal requirements?",
     answer: "We go far beyond minimum legal compliance. Your running data is stored locally on your device by default. GPS traces are never saved permanently. We use end to end encryption for all communications. We've implemented 'privacy by design' principles, meaning we simply don't collect data we don't absolutely need. You can export or delete all your data anytime with one tap. No third party trackers, no analytics companies, no data brokers. Period."
-  },
-  {
-    question: "What makes this app more ethical than commercial fitness apps?",
-    answer: "Commercial apps optimize for engagement and profit, which often means addictive design patterns, social pressure, and data harvesting. We optimize for your genuine wellbeing. We don't use psychological tricks to keep you scrolling. We don't sell your data. We don't create artificial FOMO or pressure. Our success is measured by community health outcomes and user satisfaction, not by quarterly revenue or growth metrics. We answer to our community, not shareholders."
   },
   {
     question: "Where exactly do profits or savings go?",

@@ -115,6 +115,81 @@ const AboutInitiative = () => (
         </div>
       </div>
 
+      {/* Why This Project Matters Now */}
+      <div className="mt-20">
+        <div className="text-center mb-12">
+          <div className="inline-flex p-4 bg-orange-100 rounded-full mb-6">
+            <Sparkles className="text-orange-600" size={48} />
+          </div>
+          <h3 className="text-3xl font-heading font-bold text-ufv-dark mb-4">Why This Project Matters Now</h3>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Student wellbeing is at a critical moment. Here's why UFV is stepping up to lead.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-8">
+          <div className="bg-gradient-to-br from-red-50 to-orange-50 rounded-xl p-8 border border-red-200">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center">
+                <Brain className="text-red-600" size={24} />
+              </div>
+              <h4 className="text-xl font-heading font-bold text-ufv-dark">Rising Student Stress</h4>
+            </div>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              Post-pandemic mental health challenges, financial pressures, and academic stress have created unprecedented need for accessible wellness resources. Students need support that meets them where they are.
+            </p>
+            <div className="bg-white/60 rounded-lg p-4 text-sm text-gray-600">
+              <strong className="text-red-700">The reality:</strong> Many students cannot afford gym memberships, therapy, or wellness apps. Free, community-based solutions are essential.
+            </div>
+          </div>
+
+          <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl p-8 border border-blue-200">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                <ShieldCheck className="text-blue-600" size={24} />
+              </div>
+              <h4 className="text-xl font-heading font-bold text-ufv-dark">Need for Ethical Alternatives</h4>
+            </div>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              Commercial fitness apps harvest data, create unhealthy competition, and exploit users for profit. Students deserve technology that respects their privacy and supports genuine wellbeing.
+            </p>
+            <div className="bg-white/60 rounded-lg p-4 text-sm text-gray-600">
+              <strong className="text-blue-700">Our answer:</strong> Build apps that serve people, not shareholders. Prove that ethical tech is possible.
+            </div>
+          </div>
+
+          <div className="bg-gradient-to-br from-green-50 to-teal-50 rounded-xl p-8 border border-green-200">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                <Award className="text-green-600" size={24} />
+              </div>
+              <h4 className="text-xl font-heading font-bold text-ufv-dark">UFV Leading Ethical Innovation</h4>
+            </div>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              Universities should model the values they teach. UFV has the academic foundation, community scale, and values alignment to demonstrate that technology can be built differently.
+            </p>
+            <div className="bg-white/60 rounded-lg p-4 text-sm text-gray-600">
+              <strong className="text-green-700">The opportunity:</strong> If we succeed, other institutions can replicate this model. UFV becomes a leader.
+            </div>
+          </div>
+
+          <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-8 border border-purple-200">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
+                <Users className="text-purple-600" size={24} />
+              </div>
+              <h4 className="text-xl font-heading font-bold text-ufv-dark">Strengthening Community Belonging</h4>
+            </div>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              Loneliness and disconnection are epidemics on campuses. Shared physical activity builds bonds, creates traditions, and gives students a reason to show up for each other.
+            </p>
+            <div className="bg-white/60 rounded-lg p-4 text-sm text-gray-600">
+              <strong className="text-purple-700">The vision:</strong> Saturday runs become UFV's signature community event. Running together, thriving together.
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Why You Can Trust This Project */}
       <div className="mt-20">
         <div className="text-center mb-12">
@@ -1313,9 +1388,6 @@ const AboutGrant = () => (
               <p className="text-gray-600 text-sm">We've built a sustainability plan with minimal ongoing costs. Community donations and UFV institutional support will keep it free forever.</p>
             </div>
           </div>
-          <p>
-            Skepticism is healthy. It shows our community values transparency and accountability. That's why we're committed to radical openness about our funding, governance, and operations.
-          </p>
         </div>
       </div>
 
