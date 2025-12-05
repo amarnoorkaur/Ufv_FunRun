@@ -85,6 +85,94 @@ export const ETHICAL_THEORIES: EthicalTheory[] = [
   }
 ];
 
+export interface TheoryFeatureMapping {
+  theoryName: string;
+  features: string[];
+}
+
+export const THEORY_FEATURE_MAPPINGS: TheoryFeatureMapping[] = [
+  {
+    theoryName: 'Subjective Relativism',
+    features: [
+      'No judgment algorithms: The app never labels your performance as "good" or "bad"',
+      'Personal goal-setting: You define success on your own terms',
+      'Optional sharing: Choose what you share with the community, if anything'
+    ]
+  },
+  {
+    theoryName: 'Cultural Relativism',
+    features: [
+      'Aligned with UFV campus values: Inclusivity, respect, and land acknowledgement',
+      'Saturday Fun-Runs reflect local community culture, not Silicon Valley "hustle"',
+      'Designed for Fraser Valley climate, geography, and multicultural community'
+    ]
+  },
+  {
+    theoryName: 'Divine Command Theory',
+    features: [
+      'Governed by a "higher mandate" of public service, not profit',
+      'Our funding source (provincial grant) commands us to serve the public good',
+      'Service-first architecture: Every feature asks "does this help our community?"'
+    ]
+  },
+  {
+    theoryName: 'Ethical Egoism',
+    features: [
+      'Health benefits directly serve your self-interest: better cardiovascular fitness, mood, energy',
+      'Personal progress tracking helps you achieve your individual goals',
+      'Your participation makes you healthier, happier, and more connected'
+    ]
+  },
+  {
+    theoryName: 'Kantianism',
+    features: [
+      'We treat you as an end in yourself, never merely as a means to profit',
+      'Categorical imperative: "Never sell user data" because universal data-selling would destroy trust',
+      'Respect for autonomy: You always control your data, your pace, your participation'
+    ]
+  },
+  {
+    theoryName: 'Act Utilitarianism',
+    features: [
+      'Saturday Fun-Runs maximize immediate happiness for the greatest number',
+      'Instant endorphin boost and social connection each week',
+      'GiveHub provides immediate utility by matching needs with resources'
+    ]
+  },
+  {
+    theoryName: 'Rule Utilitarianism',
+    features: [
+      'Strict privacy rules create long-term safety and happiness for everyone',
+      'No-advertising policy prevents the gradual erosion of user trust',
+      'Transparent governance rules ensure accountability and fairness over time'
+    ]
+  },
+  {
+    theoryName: 'Social Contract Theory',
+    features: [
+      'Clear mutual agreement: you participate respectfully, we protect your privacy',
+      'Transparent Terms of Service with no hidden clauses',
+      'Democratic governance: students vote on major features and policy changes'
+    ]
+  },
+  {
+    theoryName: 'Rawls\' Theory of Justice',
+    features: [
+      'Designed for the least advantaged: works on old phones, uses minimal data',
+      'Equal features for everyone: no premium tiers or paywalls',
+      'Accessibility-first: screen readers, high contrast, multiple languages'
+    ]
+  },
+  {
+    theoryName: 'Virtue Ethics',
+    features: [
+      'Encourages virtues: consistency (streaks), courage (starting), honesty (self-reporting)',
+      'Community Stories celebrate character development and resilience',
+      'The app builds moral habits, not just physical fitness'
+    ]
+  }
+];
+
 export const FAQS: FaqItem[] = [
   {
     question: "Who is the Fun-Run for?",
@@ -99,12 +187,36 @@ export const FAQS: FaqItem[] = [
     answer: "Absolutely. We only collect what's strictly necessary: distance, time, and your personal tracking data. We will never sell your data, run ads, or share your information without your explicit consent. You always stay in control of what you share."
   },
   {
-    question: "Do I need special equipment?",
-    answer: "Just your phone! The app works perfectly on its own. If you have a smartwatch, it syncs beautifully, but it's never required. We believe wellness should be accessible to everyone."
+    question: "Why should I trust a project connected to politics?",
+    answer: "Great question! While the provincial government provided the funding, this project is completely non-partisan and community-governed. David Eby's office funded dozens of community wellness initiatives across BC; we're one of many. The app is managed by UFV students, staff, and faculty with full transparency. No political messaging, no campaign content, just community wellness. Our governance board includes student representatives who vote on all major decisions."
   },
   {
-    question: "Where do profits or resources go?",
-    answer: "This is a non-profit community initiative. Any surplus funds from merchandise or voluntary donations go directly back into the community, supporting student wellness programs, campus clubs, and local businesses. Benefits shared fairly, for everyone."
+    question: "How does this app avoid unfair competition or pressure?",
+    answer: "We're explicitly designed to be non-competitive and judgment-free. There are no public leaderboards that rank runners against each other. You can choose to share your stats or keep them completely private. Challenges are optional and focus on personal goals, not beating others. We celebrate participation, not perfection. Whether you walk, jog, or run, you're equally valued in our community."
+  },
+  {
+    question: "How is GiveHub sustainable and equitable?",
+    answer: "GiveHub operates on a circular economy model where students help each other without money changing hands. All items are free to claim. Donors earn 'Impact Points' that recognize their contribution to the community, but these points have no monetary value. This prevents exploitation and keeps the focus on mutual aid. Moderation by student volunteers ensures fairness and prevents abuse of the system."
+  },
+  {
+    question: "How is my privacy protected beyond legal requirements?",
+    answer: "We go far beyond minimum legal compliance. Your running data is stored locally on your device by default. GPS traces are never saved permanently. We use end-to-end encryption for all communications. We've implemented 'privacy by design' principles, meaning we simply don't collect data we don't absolutely need. You can export or delete all your data anytime with one tap. No third-party trackers, no analytics companies, no data brokers. Period."
+  },
+  {
+    question: "What makes this app more ethical than commercial fitness apps?",
+    answer: "Commercial apps optimize for engagement and profit, which often means addictive design patterns, social pressure, and data harvesting. We optimize for your genuine well-being. We don't use psychological tricks to keep you scrolling. We don't sell your data. We don't create artificial FOMO or pressure. Our success is measured by community health outcomes and user satisfaction, not by quarterly revenue or growth metrics. We answer to our community, not shareholders."
+  },
+  {
+    question: "Where exactly do profits or savings go?",
+    answer: "This is a non-profit initiative. We have no profits. The provincial grant covers development and maintenance costs. Any extra funds from optional donations or merchandise sales go directly into: (1) Student wellness program scholarships, (2) Mental health resources on campus, (3) Supporting local Fraser Valley businesses that partner with us, and (4) Maintaining free access for everyone forever. Complete financial transparency reports are published quarterly on our website."
+  },
+  {
+    question: "How does this project ensure equal participation?",
+    answer: "Accessibility is built into every feature. The app works on older phones, uses minimal data, and doesn't require expensive wearables. All Saturday runs offer multiple distance options (1K, 3K, 5K) and walking groups. We provide accommodations for users with disabilities, including audio cues and high-contrast modes. Language support includes English, Punjabi, and Mandarin to reflect our diverse community. Financial barriers are eliminated: no fees, no equipment requirements, no hidden costs."
+  },
+  {
+    question: "Do I need special equipment?",
+    answer: "Just your phone! The app works perfectly on its own. If you have a smartwatch, it syncs beautifully, but it's never required. We believe wellness should be accessible to everyone."
   },
   {
     question: "How can I get more involved?",

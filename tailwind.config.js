@@ -7,9 +7,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'ufv-green': '#00703C',
-        'ufv-lightGreen': '#7AB800',
-        'ufv-dark': '#1a1a1a',
+        'ufv-green': '#006341',
+        'ufv-lightGreen': '#0B9E43',
+        'ufv-dark': '#121212',
         'ufv-light': '#f8f9fa',
       },
       fontFamily: {

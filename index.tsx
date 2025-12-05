@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client';
 import './index.css';
 import { Layout } from './components/Layout';
 import { Page } from './types';
-import { ETHICAL_THEORIES, FAQS, LAND_ACKNOWLEDGEMENT, SAMPLE_DONATIONS, SAMPLE_COMMUNITY_POSTS } from './constants';
+import { ETHICAL_THEORIES, FAQS, LAND_ACKNOWLEDGEMENT, SAMPLE_DONATIONS, SAMPLE_COMMUNITY_POSTS, THEORY_FEATURE_MAPPINGS } from './constants';
 import { 
   ShieldCheck, Heart, Users, Lock, Scale, Activity, Brain, Smile, Globe, 
   CheckCircle, ArrowRight, Smartphone, Calendar, UserCheck, Gift, BookOpen,
@@ -114,6 +114,83 @@ const AboutInitiative = () => (
           <p className="text-sm font-bold text-ufv-green">— Michael, UFV Staff Member</p>
         </div>
       </div>
+
+      {/* Why You Can Trust This Project */}
+      <div className="mt-20">
+        <div className="text-center mb-12">
+          <div className="inline-flex p-4 bg-ufv-green/10 rounded-full mb-6">
+            <ShieldCheck className="text-ufv-green" size={48} />
+          </div>
+          <h3 className="text-3xl font-heading font-bold text-ufv-dark mb-4">Why You Can Trust This Project</h3>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            We understand skepticism, especially when government funding is involved. Here's why this project is different.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-10">
+          <div className="bg-white rounded-xl p-8 border-l-4 border-ufv-green shadow-soft">
+            <div className="flex items-start gap-4 mb-4">
+              <div className="p-3 bg-red-100 rounded-lg">
+                <Scale className="text-red-600" size={28} />
+              </div>
+              <div>
+                <h4 className="text-xl font-heading font-bold text-ufv-dark mb-2">Addressing Community Skepticism</h4>
+                <p className="text-gray-600 leading-relaxed">
+                  Yes, this project received provincial funding from David Eby's government. We understand that raises questions. But here's the truth: this is one of <strong>dozens of community wellness grants</strong> distributed across BC to non-profit organizations. It's not a political campaign tool—it's a public health investment, managed locally by UFV students, staff, and faculty.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-xl p-8 border-l-4 border-blue-500 shadow-soft">
+            <div className="flex items-start gap-4 mb-4">
+              <div className="p-3 bg-blue-100 rounded-lg">
+                <Users className="text-blue-600" size={28} />
+              </div>
+              <div>
+                <h4 className="text-xl font-heading font-bold text-ufv-dark mb-2">Complete Political Neutrality</h4>
+                <p className="text-gray-600 leading-relaxed">
+                  Zero political messaging. Zero campaign content. Zero partisan influence. Our governance board includes student representatives, faculty advisors, and community partners—<strong>no politicians</strong>. Decisions are made democratically by our community, not by any political office.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-xl p-8 border-l-4 border-purple-500 shadow-soft">
+            <div className="flex items-start gap-4 mb-4">
+              <div className="p-3 bg-purple-100 rounded-lg">
+                <Lock className="text-purple-600" size={28} />
+              </div>
+              <div>
+                <h4 className="text-xl font-heading font-bold text-ufv-dark mb-2">Transparent, Non-Profit Governance</h4>
+                <p className="text-gray-600 leading-relaxed">
+                  Every dollar is accounted for. Quarterly financial reports are published publicly. No hidden fees, no profit motive, no corporate interests. This project exists solely to serve the UFV community. <strong>You can audit our finances anytime.</strong>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-xl p-8 border-l-4 border-green-500 shadow-soft">
+            <div className="flex items-start gap-4 mb-4">
+              <div className="p-3 bg-green-100 rounded-lg">
+                <Heart className="text-green-600" size={28} />
+              </div>
+              <div>
+                <h4 className="text-xl font-heading font-bold text-ufv-dark mb-2">User Control & Democratic Decision-Making</h4>
+                <p className="text-gray-600 leading-relaxed">
+                  Major features and policies are decided by <strong>community vote</strong>. Your voice matters. You're not just a user—you're a stakeholder. We practice genuine participatory design, where students and community members shape the app's direction.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-10 bg-ufv-green text-white p-8 rounded-xl text-center">
+          <p className="text-xl font-medium leading-relaxed">
+            "We earn your trust through transparency, accountability, and genuine service to the community. Not through marketing slogans, but through our actions every single day."
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 );
@@ -208,6 +285,39 @@ const Ethics = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Theory-to-Feature Mapping Section */}
+        <div className="mt-20 bg-ufv-light rounded-2xl p-12">
+          <div className="text-center mb-12">
+            <h3 className="text-3xl font-heading font-bold text-ufv-dark mb-4">How Each Ethical Theory Shaped Our App</h3>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              These aren't just abstract concepts. Every theory directly influenced specific features and design decisions in the Fun-Run app.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {THEORY_FEATURE_MAPPINGS.map((mapping, idx) => (
+              <div key={idx} className="bg-white rounded-xl p-8 border border-gray-200 hover:border-ufv-green transition-all hover:shadow-soft">
+                <h4 className="text-xl font-heading font-bold text-ufv-green mb-4">{mapping.theoryName}</h4>
+                <ul className="space-y-3">
+                  {mapping.features.map((feature, featureIdx) => (
+                    <li key={featureIdx} className="flex items-start gap-3">
+                      <CheckCircle className="text-ufv-lightGreen mt-0.5 flex-shrink-0" size={18} />
+                      <span className="text-gray-700 leading-relaxed">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+
+          {/* Footer Note */}
+          <div className="mt-12 text-center">
+            <p className="text-gray-600 italic max-w-3xl mx-auto">
+              "This integration demonstrates that ethical technology isn't just theoretical. It requires intentional design choices at every step, from data storage to user interface to governance structure."
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -885,6 +995,928 @@ const CommunityStories = () => {
   );
 };
 
+// --- About the Grant Page ---
+const AboutGrant = () => (
+  <div className="py-24 bg-white">
+    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Hero Header */}
+      <div className="text-center mb-16">
+        <div className="inline-flex p-4 bg-ufv-green/10 rounded-full mb-6">
+          <Globe className="text-ufv-green" size={48} />
+        </div>
+        <h1 className="text-4xl md:text-5xl font-heading font-bold text-ufv-dark mb-6">About the Provincial Grant</h1>
+        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          Understanding the funding, governance, and transparency behind the UFV Fun-Run initiative.
+        </p>
+      </div>
+
+      {/* Why the Province Funded This */}
+      <div className="mb-16">
+        <h2 className="text-3xl font-heading font-bold text-ufv-dark mb-8 flex items-center gap-3">
+          <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+            <Scale className="text-blue-600" size={24} />
+          </div>
+          Why the Province Funded This Project
+        </h2>
+        <div className="prose prose-lg max-w-none text-gray-700 space-y-6">
+          <p>
+            In 2024, the BC government under Premier David Eby launched a <strong>Community Wellness Grant Program</strong> to address rising mental health challenges, social isolation, and physical inactivity among post-secondary students across the province.
+          </p>
+          <p>
+            UFV's proposal for a community-driven fitness app stood out because it emphasized <strong>ethical technology, local partnership, and democratic governance</strong>. Unlike commercial fitness apps that prioritize profit and data extraction, our proposal centered on genuine community well-being.
+          </p>
+          <div className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg">
+            <p className="text-blue-900 font-medium mb-2">
+              <strong>Key Funding Criteria We Met:</strong>
+            </p>
+            <ul className="list-disc pl-5 space-y-2 text-blue-800">
+              <li>Addresses documented mental health and physical wellness needs among students</li>
+              <li>Community-governed with transparent decision-making processes</li>
+              <li>Free and accessible to all students, staff, alumni, and community partners</li>
+              <li>Built on ethical technology principles taught in UFV's own curriculum</li>
+              <li>Supports local Fraser Valley businesses and circular economy initiatives</li>
+            </ul>
+          </div>
+          <p>
+            This grant is part of a broader public health investment, not a partisan political initiative. Similar grants were awarded to universities, colleges, and community organizations across BC, regardless of their location's political leanings.
+          </p>
+        </div>
+      </div>
+
+      {/* Why the UFV Community is Skeptical */}
+      <div className="mb-16">
+        <h2 className="text-3xl font-heading font-bold text-ufv-dark mb-8 flex items-center gap-3">
+          <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
+            <Brain className="text-orange-600" size={24} />
+          </div>
+          Understanding Community Skepticism
+        </h2>
+        <div className="prose prose-lg max-w-none text-gray-700 space-y-6">
+          <p>
+            We recognize that many in the UFV community have legitimate concerns about a project funded by the provincial government. Common questions include:
+          </p>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
+              <p className="font-bold text-ufv-dark mb-2">❓ "Is this just political branding?"</p>
+              <p className="text-gray-600 text-sm">No. There is zero political messaging, no campaign content, and no partisan influence on app features or governance.</p>
+            </div>
+            <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
+              <p className="font-bold text-ufv-dark mb-2">❓ "Will my data be shared with the government?"</p>
+              <p className="text-gray-600 text-sm">Absolutely not. Your data stays private. The government has no access to user data—none. Full stop.</p>
+            </div>
+            <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
+              <p className="font-bold text-ufv-dark mb-2">❓ "Who really controls this project?"</p>
+              <p className="text-gray-600 text-sm">UFV students, staff, and faculty. Our governance board operates independently with full decision-making authority.</p>
+            </div>
+            <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
+              <p className="font-bold text-ufv-dark mb-2">❓ "What happens when the grant runs out?"</p>
+              <p className="text-gray-600 text-sm">We've built a sustainability plan with minimal ongoing costs. Community donations and UFV institutional support will keep it free forever.</p>
+            </div>
+          </div>
+          <p>
+            Skepticism is healthy. It shows our community values transparency and accountability. That's why we're committed to radical openness about our funding, governance, and operations.
+          </p>
+        </div>
+      </div>
+
+      {/* How We Remain Neutral, Ethical, and Community-Owned */}
+      <div className="mb-16">
+        <h2 className="text-3xl font-heading font-bold text-ufv-dark mb-8 flex items-center gap-3">
+          <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+            <ShieldCheck className="text-green-600" size={24} />
+          </div>
+          Neutrality, Ethics & Community Ownership
+        </h2>
+        <div className="grid md:grid-cols-3 gap-6 mb-8">
+          <div className="bg-white border-2 border-ufv-green rounded-xl p-6">
+            <div className="w-12 h-12 bg-ufv-green/10 rounded-full flex items-center justify-center mb-4">
+              <Users className="text-ufv-green" size={24} />
+            </div>
+            <h3 className="font-heading font-bold text-lg text-ufv-dark mb-3">Community Governance Board</h3>
+            <ul className="text-sm text-gray-600 space-y-2">
+              <li>• 5 student representatives (elected)</li>
+              <li>• 2 faculty advisors (ethics & CS)</li>
+              <li>• 2 staff members (wellness office)</li>
+              <li>• 2 community partners (local businesses)</li>
+              <li>• 0 politicians or government officials</li>
+            </ul>
+          </div>
+          <div className="bg-white border-2 border-ufv-green rounded-xl p-6">
+            <div className="w-12 h-12 bg-ufv-green/10 rounded-full flex items-center justify-center mb-4">
+              <Lock className="text-ufv-green" size={24} />
+            </div>
+            <h3 className="font-heading font-bold text-lg text-ufv-dark mb-3">Data Independence</h3>
+            <p className="text-sm text-gray-600">
+              All user data is stored on Canadian servers managed by UFV IT. The provincial government has <strong>zero access</strong>. Our privacy architecture is audited annually by independent third parties.
+            </p>
+          </div>
+          <div className="bg-white border-2 border-ufv-green rounded-xl p-6">
+            <div className="w-12 h-12 bg-ufv-green/10 rounded-full flex items-center justify-center mb-4">
+              <Scale className="text-ufv-green" size={24} />
+            </div>
+            <h3 className="font-heading font-bold text-lg text-ufv-dark mb-3">Democratic Decision-Making</h3>
+            <p className="text-sm text-gray-600">
+              Major features and policies require community approval via student vote. Quarterly town halls allow any UFV member to propose changes, challenge decisions, or request audits.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Transparent Use of Funds */}
+      <div className="mb-16">
+        <h2 className="text-3xl font-heading font-bold text-ufv-dark mb-8 flex items-center gap-3">
+          <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
+            <TrendingUp className="text-purple-600" size={24} />
+          </div>
+          How Funds Are Used Transparently
+        </h2>
+        <div className="bg-ufv-light rounded-xl p-8 mb-6">
+          <h3 className="text-xl font-heading font-bold text-ufv-dark mb-6">Grant Allocation Breakdown</h3>
+          <div className="space-y-4">
+            <div className="flex items-center justify-between p-4 bg-white rounded-lg">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+                  <Smartphone size={20} className="text-blue-600" />
+                </div>
+                <div>
+                  <p className="font-bold text-ufv-dark">App Development & Maintenance</p>
+                  <p className="text-sm text-gray-500">Student developers, hosting, security audits</p>
+                </div>
+              </div>
+              <span className="font-bold text-ufv-green">45%</span>
+            </div>
+            <div className="flex items-center justify-between p-4 bg-white rounded-lg">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+                  <Award size={20} className="text-green-600" />
+                </div>
+                <div>
+                  <p className="font-bold text-ufv-dark">Student Wellness Programs</p>
+                  <p className="text-sm text-gray-500">Mental health resources, fitness workshops</p>
+                </div>
+              </div>
+              <span className="font-bold text-ufv-green">30%</span>
+            </div>
+            <div className="flex items-center justify-between p-4 bg-white rounded-lg">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center">
+                  <Users size={20} className="text-purple-600" />
+                </div>
+                <div>
+                  <p className="font-bold text-ufv-dark">Community Events & Partnerships</p>
+                  <p className="text-sm text-gray-500">Saturday runs, local business partnerships</p>
+                </div>
+              </div>
+              <span className="font-bold text-ufv-green">15%</span>
+            </div>
+            <div className="flex items-center justify-between p-4 bg-white rounded-lg">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center">
+                  <ShieldCheck size={20} className="text-orange-600" />
+                </div>
+                <div>
+                  <p className="font-bold text-ufv-dark">Transparency & Governance</p>
+                  <p className="text-sm text-gray-500">Audits, reports, community consultations</p>
+                </div>
+              </div>
+              <span className="font-bold text-ufv-green">10%</span>
+            </div>
+          </div>
+        </div>
+        <div className="bg-ufv-green text-white p-6 rounded-xl">
+          <p className="text-lg font-medium">
+            📊 <strong>Full financial reports published quarterly</strong> on our website. Every dollar accounted for. No hidden costs, no administrative bloat, no profit margins.
+          </p>
+        </div>
+      </div>
+
+      {/* How the Project Supports Students Financially */}
+      <div className="mb-16">
+        <h2 className="text-3xl font-heading font-bold text-ufv-dark mb-8 flex items-center gap-3">
+          <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center">
+            <Heart className="text-red-600" size={24} />
+          </div>
+          Supporting Students Financially
+        </h2>
+        <div className="prose prose-lg max-w-none text-gray-700 space-y-6">
+          <p>
+            This project directly benefits students' financial well-being in multiple ways:
+          </p>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-gradient-to-br from-green-50 to-green-100 p-8 rounded-xl border border-green-200">
+              <h4 className="font-heading font-bold text-xl text-green-900 mb-4">💰 Paid Student Opportunities</h4>
+              <ul className="space-y-3 text-green-800">
+                <li className="flex items-start gap-2">
+                  <CheckCircle className="text-green-600 mt-0.5 flex-shrink-0" size={18} />
+                  <span>Part-time developer positions (competitive hourly wages)</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle className="text-green-600 mt-0.5 flex-shrink-0" size={18} />
+                  <span>Event coordination roles for Saturday runs</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle className="text-green-600 mt-0.5 flex-shrink-0" size={18} />
+                  <span>Content creation and community management positions</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle className="text-green-600 mt-0.5 flex-shrink-0" size={18} />
+                  <span>UX research and design internships</span>
+                </li>
+              </ul>
+            </div>
+            <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-xl border border-blue-200">
+              <h4 className="font-heading font-bold text-xl text-blue-900 mb-4">💸 Cost Savings for Students</h4>
+              <ul className="space-y-3 text-blue-800">
+                <li className="flex items-start gap-2">
+                  <CheckCircle className="text-blue-600 mt-0.5 flex-shrink-0" size={18} />
+                  <span>Free fitness tracking (saves $10-20/month on commercial apps)</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle className="text-blue-600 mt-0.5 flex-shrink-0" size={18} />
+                  <span>GiveHub eliminates costs for textbooks, equipment, clothing</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle className="text-blue-600 mt-0.5 flex-shrink-0" size={18} />
+                  <span>Reduces need for expensive gym memberships</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle className="text-blue-600 mt-0.5 flex-shrink-0" size={18} />
+                  <span>Mental health benefits reduce counseling expenses</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="bg-purple-50 border-l-4 border-purple-500 p-6 rounded-r-lg">
+            <p className="text-purple-900 font-medium">
+              <strong>Student Wellness Scholarship Fund:</strong> A portion of any surplus funds goes directly into scholarships for students facing financial barriers to wellness activities (fitness classes, sports equipment, nutritious food).
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Why UFV is Leading Ethical Technology */}
+      <div className="mb-16">
+        <h2 className="text-3xl font-heading font-bold text-ufv-dark mb-8 flex items-center gap-3">
+          <div className="w-12 h-12 bg-ufv-green/20 rounded-full flex items-center justify-center">
+            <Sparkles className="text-ufv-green" size={24} />
+          </div>
+          Why UFV is Leading Ethical Technology
+        </h2>
+        <div className="prose prose-lg max-w-none text-gray-700 space-y-6">
+          <p>
+            UFV has a unique opportunity and responsibility to demonstrate that technology can be built differently. Here's why:
+          </p>
+          <div className="bg-white rounded-xl p-8 border-2 border-ufv-green shadow-soft">
+            <h4 className="font-heading font-bold text-2xl text-ufv-green mb-6">UFV's Ethical Tech Advantage</h4>
+            <div className="space-y-6">
+              <div className="flex gap-4">
+                <div className="w-8 h-8 bg-ufv-green/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <BookOpen className="text-ufv-green" size={18} />
+                </div>
+                <div>
+                  <p className="font-bold text-ufv-dark mb-1">Academic Foundation</p>
+                  <p className="text-gray-600">UFV's Computer Science and Philosophy programs teach the ethical theories we're implementing. Students learn these frameworks in class, then see them applied in real-world technology.</p>
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <div className="w-8 h-8 bg-ufv-green/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <Users className="text-ufv-green" size={18} />
+                </div>
+                <div>
+                  <p className="font-bold text-ufv-dark mb-1">Community-Scale Innovation</p>
+                  <p className="text-gray-600">UFV's size allows for genuine participatory design. Every student, staff member, and community partner can meaningfully contribute to governance and feature development.</p>
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <div className="w-8 h-8 bg-ufv-green/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <Globe className="text-ufv-green" size={18} />
+                </div>
+                <div>
+                  <p className="font-bold text-ufv-dark mb-1">Fraser Valley Values</p>
+                  <p className="text-gray-600">Our region's multicultural fabric, commitment to sustainability, and respect for Indigenous land stewardship inform our technology design in ways Silicon Valley cannot replicate.</p>
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <div className="w-8 h-8 bg-ufv-green/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <Award className="text-ufv-green" size={18} />
+                </div>
+                <div>
+                  <p className="font-bold text-ufv-dark mb-1">Model for Other Institutions</p>
+                  <p className="text-gray-600">If we succeed, other universities can replicate this model. UFV can become a leader in ethical technology, attracting students who want to build tech that serves people, not exploits them.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="bg-ufv-green text-white p-8 rounded-xl text-center">
+            <p className="text-2xl font-heading font-bold mb-4">This is UFV's Moment</p>
+            <p className="text-lg leading-relaxed">
+              We can prove that ethical technology isn't just a utopian dream. It's practical, scalable, and sustainable. The Fun-Run is our proof of concept.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom CTA */}
+      <div className="text-center bg-ufv-light p-12 rounded-2xl">
+        <h3 className="text-2xl font-heading font-bold text-ufv-dark mb-4">Questions or Concerns?</h3>
+        <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
+          Transparency is our commitment. If you have questions about funding, governance, or privacy, we want to hear from you.
+        </p>
+        <button className="bg-ufv-green text-white px-8 py-4 rounded-ufv font-heading font-bold hover:bg-ufv-dark transition-colors">
+          Contact Our Governance Board
+        </button>
+      </div>
+    </div>
+  </div>
+);
+
+// --- Local Economic & Social Impact Component ---
+const LocalImpact = () => (
+  <div className="py-24 bg-gradient-to-b from-white to-ufv-light">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Header */}
+      <div className="text-center mb-16">
+        <div className="inline-flex p-4 bg-ufv-green/10 rounded-full mb-6">
+          <TrendingUp className="text-ufv-green" size={48} />
+        </div>
+        <h2 className="text-4xl md:text-5xl font-heading font-bold text-ufv-dark mb-6">Local Economic & Social Impact</h2>
+        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          How the Fun-Run strengthens the Fraser Valley economy, supports local businesses, and builds community resilience.
+        </p>
+      </div>
+
+      {/* Impact Areas Grid */}
+      <div className="grid md:grid-cols-2 gap-10 mb-16">
+        {/* Support for Fraser Valley Wellness Businesses */}
+        <div className="bg-white rounded-2xl p-10 shadow-soft border border-gray-200 hover:border-ufv-green transition-all">
+          <div className="flex items-center gap-4 mb-6">
+            <div className="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center">
+              <Smile className="text-blue-600" size={28} />
+            </div>
+            <h3 className="text-2xl font-heading font-bold text-ufv-dark">Supporting Local Wellness Businesses</h3>
+          </div>
+          <div className="space-y-4 text-gray-700">
+            <p className="leading-relaxed">
+              The Fun-Run app <strong>partners with Fraser Valley wellness businesses</strong> to create mutual benefit. Local gyms, yoga studios, healthy cafes, and sports equipment stores gain visibility and customer traffic through our community.
+            </p>
+            <div className="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500">
+              <p className="font-bold text-blue-900 mb-3">How It Works:</p>
+              <ul className="space-y-2 text-blue-800 text-sm">
+                <li className="flex items-start gap-2">
+                  <CheckCircle className="text-blue-600 mt-0.5 flex-shrink-0" size={16} />
+                  <span>Partner businesses offer exclusive discounts to Fun-Run participants</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle className="text-blue-600 mt-0.5 flex-shrink-0" size={16} />
+                  <span>Saturday runs feature local cafes as refreshment stops (paid partnerships)</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle className="text-blue-600 mt-0.5 flex-shrink-0" size={16} />
+                  <span>Local health professionals host free workshops via the app</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle className="text-blue-600 mt-0.5 flex-shrink-0" size={16} />
+                  <span>Community challenges spotlight Fraser Valley wellness destinations</span>
+                </li>
+              </ul>
+            </div>
+            <p className="text-sm italic text-gray-600">
+              Result: Healthier students support healthier local businesses. Economic benefit stays in the Fraser Valley, not siphoned off to Silicon Valley corporations.
+            </p>
+          </div>
+        </div>
+
+        {/* Reduced Financial Strain on Students */}
+        <div className="bg-white rounded-2xl p-10 shadow-soft border border-gray-200 hover:border-ufv-green transition-all">
+          <div className="flex items-center gap-4 mb-6">
+            <div className="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center">
+              <Heart className="text-green-600" size={28} />
+            </div>
+            <h3 className="text-2xl font-heading font-bold text-ufv-dark">Reducing Student Financial Strain</h3>
+          </div>
+          <div className="space-y-4 text-gray-700">
+            <p className="leading-relaxed">
+              Financial stress is one of the biggest barriers to student wellness. The Fun-Run removes multiple cost barriers simultaneously.
+            </p>
+            <div className="space-y-3">
+              <div className="flex items-start gap-3 bg-green-50 p-4 rounded-lg">
+                <div className="w-8 h-8 bg-green-200 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span className="text-green-800 font-bold text-sm">$0</span>
+                </div>
+                <div>
+                  <p className="font-bold text-green-900">No App Subscription Fees</p>
+                  <p className="text-sm text-green-800">Saves $10-20/month compared to Strava Premium, Peloton, or Nike Run Club premium tiers.</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3 bg-green-50 p-4 rounded-lg">
+                <div className="w-8 h-8 bg-green-200 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span className="text-green-800 font-bold text-sm">$0</span>
+                </div>
+                <div>
+                  <p className="font-bold text-green-900">No Gym Membership Required</p>
+                  <p className="text-sm text-green-800">Outdoor running is free. Saves $30-80/month on gym fees.</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3 bg-green-50 p-4 rounded-lg">
+                <div className="w-8 h-8 bg-green-200 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span className="text-green-800 font-bold text-sm">$0</span>
+                </div>
+                <div>
+                  <p className="font-bold text-green-900">No Equipment Costs</p>
+                  <p className="text-sm text-green-800">Works on any smartphone. No wearables required.</p>
+                </div>
+              </div>
+            </div>
+            <div className="bg-gradient-to-r from-green-500 to-green-600 text-white p-6 rounded-lg text-center">
+              <p className="text-3xl font-bold mb-2">$480 - $1,200</p>
+              <p className="text-sm">Estimated annual savings per student compared to commercial alternatives</p>
+            </div>
+          </div>
+        </div>
+
+        {/* GiveHub Circular Economy */}
+        <div className="bg-white rounded-2xl p-10 shadow-soft border border-gray-200 hover:border-ufv-green transition-all">
+          <div className="flex items-center gap-4 mb-6">
+            <div className="w-14 h-14 bg-purple-100 rounded-full flex items-center justify-center">
+              <Recycle className="text-purple-600" size={28} />
+            </div>
+            <h3 className="text-2xl font-heading font-bold text-ufv-dark">GiveHub: Circular Economy in Action</h3>
+          </div>
+          <div className="space-y-4 text-gray-700">
+            <p className="leading-relaxed">
+              GiveHub creates a <strong>circular economy within the UFV community</strong>, where resources circulate among students without requiring money to change hands.
+            </p>
+            <div className="bg-purple-50 p-6 rounded-lg border-l-4 border-purple-500">
+              <p className="font-bold text-purple-900 mb-3">Economic Benefits:</p>
+              <ul className="space-y-2 text-purple-800 text-sm">
+                <li className="flex items-start gap-2">
+                  <Recycle className="text-purple-600 mt-0.5 flex-shrink-0" size={16} />
+                  <span><strong>Waste reduction:</strong> Extends product lifespan, reduces landfill burden</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Recycle className="text-purple-600 mt-0.5 flex-shrink-0" size={16} />
+                  <span><strong>Resource efficiency:</strong> Items get reused instead of sitting unused in closets</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Recycle className="text-purple-600 mt-0.5 flex-shrink-0" size={16} />
+                  <span><strong>Social capital:</strong> Builds trust and reciprocity within the community</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Recycle className="text-purple-600 mt-0.5 flex-shrink-0" size={16} />
+                  <span><strong>Equity:</strong> Provides access to resources regardless of financial means</span>
+                </li>
+              </ul>
+            </div>
+            <p className="text-sm italic text-gray-600">
+              "One student's unused textbook becomes another's lifeline. One person's outgrown fitness gear empowers someone else to start their wellness journey. Value created without extraction."
+            </p>
+          </div>
+        </div>
+
+        {/* Health → Well-being → Academic Success */}
+        <div className="bg-white rounded-2xl p-10 shadow-soft border border-gray-200 hover:border-ufv-green transition-all">
+          <div className="flex items-center gap-4 mb-6">
+            <div className="w-14 h-14 bg-orange-100 rounded-full flex items-center justify-center">
+              <Brain className="text-orange-600" size={28} />
+            </div>
+            <h3 className="text-2xl font-heading font-bold text-ufv-dark">Health → Well-being → Academic Success</h3>
+          </div>
+          <div className="space-y-4 text-gray-700">
+            <p className="leading-relaxed">
+              Physical activity isn't just about fitness. <strong>Research shows direct links between physical health, mental well-being, and academic performance.</strong>
+            </p>
+            <div className="space-y-4">
+              <div className="flex items-start gap-4">
+                <div className="text-3xl">🏃</div>
+                <div>
+                  <p className="font-bold text-ufv-dark mb-1">Regular Physical Activity</p>
+                  <p className="text-sm text-gray-600">Saturday runs + personal tracking encourage consistent movement</p>
+                </div>
+              </div>
+              <div className="text-center text-2xl text-ufv-green">↓</div>
+              <div className="flex items-start gap-4">
+                <div className="text-3xl">😊</div>
+                <div>
+                  <p className="font-bold text-ufv-dark mb-1">Improved Mental Health</p>
+                  <p className="text-sm text-gray-600">Reduced anxiety, depression, and stress. Better sleep quality.</p>
+                </div>
+              </div>
+              <div className="text-center text-2xl text-ufv-green">↓</div>
+              <div className="flex items-start gap-4">
+                <div className="text-3xl">📚</div>
+                <div>
+                  <p className="font-bold text-ufv-dark mb-1">Enhanced Academic Performance</p>
+                  <p className="text-sm text-gray-600">Better focus, memory, and cognitive function. Higher course completion rates.</p>
+                </div>
+              </div>
+              <div className="text-center text-2xl text-ufv-green">↓</div>
+              <div className="flex items-start gap-4">
+                <div className="text-3xl">🎓</div>
+                <div>
+                  <p className="font-bold text-ufv-dark mb-1">Graduation & Career Success</p>
+                  <p className="text-sm text-gray-600">Better job prospects, higher earning potential, lifelong wellness habits.</p>
+                </div>
+              </div>
+            </div>
+            <div className="bg-orange-50 p-6 rounded-lg border border-orange-200 text-center">
+              <p className="text-orange-900 font-medium">
+                <strong>For UFV:</strong> Higher retention rates, better graduation outcomes, enhanced institutional reputation → attracts more students and funding
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Community Happiness → Stronger Local Economy */}
+      <div className="bg-gradient-to-r from-ufv-green to-ufv-dark text-white rounded-2xl p-12 text-center">
+        <div className="max-w-4xl mx-auto">
+          <h3 className="text-3xl font-heading font-bold mb-6">Community Happiness → Stronger Local Economy</h3>
+          <p className="text-xl text-green-100 mb-8 leading-relaxed">
+            Happier, healthier communities are more economically productive. When people feel good, they contribute more, support local businesses, volunteer more, and build social capital that strengthens the entire region.
+          </p>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+              <div className="text-4xl mb-3">🤝</div>
+              <p className="font-bold mb-2">Social Cohesion</p>
+              <p className="text-sm text-green-100">Stronger community bonds reduce isolation and increase civic participation</p>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+              <div className="text-4xl mb-3">💼</div>
+              <p className="font-bold mb-2">Economic Vitality</p>
+              <p className="text-sm text-green-100">Healthy workers are more productive and take fewer sick days</p>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+              <div className="text-4xl mb-3">🌱</div>
+              <p className="font-bold mb-2">Sustainable Growth</p>
+              <p className="text-sm text-green-100">Long-term community wellness reduces healthcare costs and social services burden</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom Stats */}
+      <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="text-center p-6 bg-white rounded-xl shadow-sm">
+          <p className="text-4xl font-bold text-ufv-green mb-2">100%</p>
+          <p className="text-sm text-gray-600 font-medium">Free for All</p>
+        </div>
+        <div className="text-center p-6 bg-white rounded-xl shadow-sm">
+          <p className="text-4xl font-bold text-ufv-green mb-2">$500+</p>
+          <p className="text-sm text-gray-600 font-medium">Avg. Student Savings/Year</p>
+        </div>
+        <div className="text-center p-6 bg-white rounded-xl shadow-sm">
+          <p className="text-4xl font-bold text-ufv-green mb-2">20+</p>
+          <p className="text-sm text-gray-600 font-medium">Local Business Partners</p>
+        </div>
+        <div className="text-center p-6 bg-white rounded-xl shadow-sm">
+          <p className="text-4xl font-bold text-ufv-green mb-2">Zero</p>
+          <p className="text-sm text-gray-600 font-medium">Data Sold</p>
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
+// --- App Mockup Screens Component ---
+const AppMockup = () => (
+  <div className="py-24 bg-white">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Header */}
+      <div className="text-center mb-16">
+        <div className="inline-flex p-4 bg-ufv-green/10 rounded-full mb-6">
+          <Smartphone className="text-ufv-green" size={48} />
+        </div>
+        <h2 className="text-4xl md:text-5xl font-heading font-bold text-ufv-dark mb-6">App Preview</h2>
+        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          A glimpse at the intuitive, user-friendly interface designed with your wellness journey in mind.
+        </p>
+      </div>
+
+      {/* Mockup Screens Grid */}
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        {/* Login Screen */}
+        <div className="bg-gradient-to-br from-ufv-light to-white rounded-2xl p-8 shadow-soft border border-gray-200">
+          <div className="bg-white rounded-xl p-6 shadow-inner mb-4 min-h-[400px] flex flex-col items-center justify-center border-4 border-gray-100">
+            <div className="w-20 h-20 bg-ufv-green/10 rounded-full flex items-center justify-center mb-6">
+              <UserCheck className="text-ufv-green" size={40} />
+            </div>
+            <h3 className="text-2xl font-heading font-bold text-ufv-dark mb-2">Welcome Back</h3>
+            <p className="text-sm text-gray-500 mb-6 text-center">Sign in to continue your wellness journey</p>
+            <div className="w-full max-w-xs space-y-3">
+              <div className="h-12 bg-gray-100 rounded-lg flex items-center px-4 text-sm text-gray-400">
+                Email
+              </div>
+              <div className="h-12 bg-gray-100 rounded-lg flex items-center px-4 text-sm text-gray-400">
+                Password
+              </div>
+              <div className="h-12 bg-ufv-green rounded-lg flex items-center justify-center text-white font-bold">
+                Sign In
+              </div>
+            </div>
+          </div>
+          <div className="text-center">
+            <h4 className="font-heading font-bold text-lg text-ufv-dark mb-1">Login Screen</h4>
+            <p className="text-sm text-gray-600">Simple, secure authentication</p>
+          </div>
+        </div>
+
+        {/* Dashboard */}
+        <div className="bg-gradient-to-br from-ufv-light to-white rounded-2xl p-8 shadow-soft border border-gray-200">
+          <div className="bg-white rounded-xl p-6 shadow-inner mb-4 min-h-[400px] border-4 border-gray-100">
+            <div className="flex items-center justify-between mb-6">
+              <div>
+                <p className="text-sm text-gray-500">Today's Progress</p>
+                <h3 className="text-2xl font-heading font-bold text-ufv-dark">3.2 km</h3>
+              </div>
+              <div className="w-12 h-12 bg-ufv-green/10 rounded-full flex items-center justify-center">
+                <Activity className="text-ufv-green" size={24} />
+              </div>
+            </div>
+            
+            <div className="space-y-4 mb-6">
+              <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
+                <span className="text-sm text-gray-600">Distance</span>
+                <span className="font-bold text-ufv-dark">3.2 km</span>
+              </div>
+              <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
+                <span className="text-sm text-gray-600">Pace</span>
+                <span className="font-bold text-ufv-dark">6:15 /km</span>
+              </div>
+              <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
+                <span className="text-sm text-gray-600">Time</span>
+                <span className="font-bold text-ufv-dark">20:05</span>
+              </div>
+            </div>
+
+            <div className="bg-ufv-light p-4 rounded-lg">
+              <p className="text-xs text-gray-600 mb-2">Weekly Stats</p>
+              <div className="flex gap-1">
+                {[40, 60, 45, 80, 55, 70, 50].map((height, i) => (
+                  <div key={i} className="flex-1 bg-ufv-green/20 rounded-t" style={{height: `${height}px`}}>
+                    <div className="w-full bg-ufv-green rounded-t" style={{height: `${height * 0.7}px`}}></div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+          <div className="text-center">
+            <h4 className="font-heading font-bold text-lg text-ufv-dark mb-1">Dashboard</h4>
+            <p className="text-sm text-gray-600">Track your progress at a glance</p>
+          </div>
+        </div>
+
+        {/* Saturday Run Map */}
+        <div className="bg-gradient-to-br from-ufv-light to-white rounded-2xl p-8 shadow-soft border border-gray-200">
+          <div className="bg-white rounded-xl p-6 shadow-inner mb-4 min-h-[400px] flex flex-col border-4 border-gray-100">
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="font-heading font-bold text-lg text-ufv-dark">Saturday Fun-Run</h3>
+              <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full font-bold">LIVE</span>
+            </div>
+            
+            {/* Map Placeholder */}
+            <div className="flex-1 bg-gradient-to-br from-green-100 to-blue-100 rounded-lg mb-4 flex items-center justify-center relative overflow-hidden">
+              <div className="absolute inset-0 opacity-30">
+                {[...Array(20)].map((_, i) => (
+                  <div 
+                    key={i} 
+                    className="absolute w-1 h-1 bg-ufv-green rounded-full"
+                    style={{
+                      left: `${Math.random() * 100}%`,
+                      top: `${Math.random() * 100}%`
+                    }}
+                  />
+                ))}
+              </div>
+              <div className="relative z-10 text-center">
+                <div className="w-16 h-16 bg-ufv-green rounded-full flex items-center justify-center mb-2 mx-auto">
+                  <Users className="text-white" size={32} />
+                </div>
+                <p className="text-sm font-bold text-ufv-dark">47 Runners</p>
+              </div>
+            </div>
+
+            <div className="space-y-2">
+              <div className="flex items-center justify-between text-sm">
+                <span className="text-gray-600">Route</span>
+                <span className="font-bold text-ufv-dark">Campus Loop 5K</span>
+              </div>
+              <div className="flex items-center justify-between text-sm">
+                <span className="text-gray-600">Next Run</span>
+                <span className="font-bold text-ufv-dark">Sat 10:00 AM</span>
+              </div>
+            </div>
+          </div>
+          <div className="text-center">
+            <h4 className="font-heading font-bold text-lg text-ufv-dark mb-1">Saturday Run Map</h4>
+            <p className="text-sm text-gray-600">See who's running in real-time</p>
+          </div>
+        </div>
+
+        {/* Challenges Page */}
+        <div className="bg-gradient-to-br from-ufv-light to-white rounded-2xl p-8 shadow-soft border border-gray-200">
+          <div className="bg-white rounded-xl p-6 shadow-inner mb-4 min-h-[400px] border-4 border-gray-100">
+            <h3 className="font-heading font-bold text-lg text-ufv-dark mb-4">Active Challenges</h3>
+            <div className="space-y-3">
+              <div className="p-4 bg-blue-50 border-l-4 border-blue-500 rounded-r-lg">
+                <div className="flex items-center gap-2 mb-2">
+                  <Award className="text-blue-600" size={16} />
+                  <span className="font-bold text-sm text-blue-900">30-Day Streak</span>
+                </div>
+                <div className="flex items-center justify-between text-xs text-blue-700">
+                  <span>Progress: 12/30 days</span>
+                  <span>40%</span>
+                </div>
+                <div className="w-full bg-blue-200 h-2 rounded-full mt-2">
+                  <div className="bg-blue-600 h-2 rounded-full" style={{width: '40%'}}></div>
+                </div>
+              </div>
+
+              <div className="p-4 bg-green-50 border-l-4 border-green-500 rounded-r-lg">
+                <div className="flex items-center gap-2 mb-2">
+                  <Users className="text-green-600" size={16} />
+                  <span className="font-bold text-sm text-green-900">Team Challenge</span>
+                </div>
+                <div className="flex items-center justify-between text-xs text-green-700">
+                  <span>CS Department: 47 km</span>
+                  <span>2nd place</span>
+                </div>
+                <div className="w-full bg-green-200 h-2 rounded-full mt-2">
+                  <div className="bg-green-600 h-2 rounded-full" style={{width: '75%'}}></div>
+                </div>
+              </div>
+
+              <div className="p-4 bg-purple-50 border-l-4 border-purple-500 rounded-r-lg">
+                <div className="flex items-center gap-2 mb-2">
+                  <Heart className="text-purple-600" size={16} />
+                  <span className="font-bold text-sm text-purple-900">Wellness Warrior</span>
+                </div>
+                <div className="flex items-center justify-between text-xs text-purple-700">
+                  <span>Complete 10 activities</span>
+                  <span>70%</span>
+                </div>
+                <div className="w-full bg-purple-200 h-2 rounded-full mt-2">
+                  <div className="bg-purple-600 h-2 rounded-full" style={{width: '70%'}}></div>
+                </div>
+              </div>
+            </div>
+
+            <button className="w-full mt-4 py-3 bg-ufv-green text-white rounded-lg font-bold hover:bg-ufv-dark transition-colors flex items-center justify-center gap-2">
+              <Plus size={18} /> Join New Challenge
+            </button>
+          </div>
+          <div className="text-center">
+            <h4 className="font-heading font-bold text-lg text-ufv-dark mb-1">Challenges</h4>
+            <p className="text-sm text-gray-600">Personal & team goals</p>
+          </div>
+        </div>
+
+        {/* GiveHub Preview */}
+        <div className="bg-gradient-to-br from-ufv-light to-white rounded-2xl p-8 shadow-soft border border-gray-200">
+          <div className="bg-white rounded-xl p-6 shadow-inner mb-4 min-h-[400px] border-4 border-gray-100">
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="font-heading font-bold text-lg text-ufv-dark">GiveHub</h3>
+              <Gift className="text-ufv-green" size={24} />
+            </div>
+            
+            <div className="space-y-3">
+              <div className="p-3 bg-gray-50 rounded-lg border border-gray-200">
+                <div className="flex gap-3">
+                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <BookOpen className="text-blue-600" size={20} />
+                  </div>
+                  <div className="flex-1">
+                    <p className="font-bold text-sm text-ufv-dark mb-1">Psychology Textbook</p>
+                    <p className="text-xs text-gray-500">Posted 2h ago</p>
+                  </div>
+                </div>
+                <button className="w-full mt-2 py-2 bg-ufv-green text-white rounded text-xs font-bold">Claim</button>
+              </div>
+
+              <div className="p-3 bg-gray-50 rounded-lg border border-gray-200">
+                <div className="flex gap-3">
+                  <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Activity className="text-green-600" size={20} />
+                  </div>
+                  <div className="flex-1">
+                    <p className="font-bold text-sm text-ufv-dark mb-1">Yoga Mat</p>
+                    <p className="text-xs text-gray-500">Posted 1d ago</p>
+                  </div>
+                </div>
+                <button className="w-full mt-2 py-2 bg-ufv-green text-white rounded text-xs font-bold">Claim</button>
+              </div>
+
+              <div className="p-3 bg-gray-50 rounded-lg border border-gray-200">
+                <div className="flex gap-3">
+                  <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Shirt className="text-purple-600" size={20} />
+                  </div>
+                  <div className="flex-1">
+                    <p className="font-bold text-sm text-ufv-dark mb-1">Winter Jacket</p>
+                    <p className="text-xs text-gray-500">Posted 3d ago</p>
+                  </div>
+                </div>
+                <button className="w-full mt-2 py-2 bg-ufv-green text-white rounded text-xs font-bold">Claim</button>
+              </div>
+            </div>
+
+            <button className="w-full mt-4 py-3 border-2 border-ufv-green text-ufv-green rounded-lg font-bold hover:bg-ufv-light transition-colors">
+              Donate an Item
+            </button>
+          </div>
+          <div className="text-center">
+            <h4 className="font-heading font-bold text-lg text-ufv-dark mb-1">GiveHub</h4>
+            <p className="text-sm text-gray-600">Share resources, help peers</p>
+          </div>
+        </div>
+
+        {/* Community Stories Preview */}
+        <div className="bg-gradient-to-br from-ufv-light to-white rounded-2xl p-8 shadow-soft border border-gray-200">
+          <div className="bg-white rounded-xl p-6 shadow-inner mb-4 min-h-[400px] border-4 border-gray-100">
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="font-heading font-bold text-lg text-ufv-dark">Community</h3>
+              <MessageCircle className="text-ufv-green" size={24} />
+            </div>
+            
+            <div className="space-y-3">
+              <div className="p-3 bg-gray-50 rounded-lg border-l-4 border-green-500">
+                <div className="flex items-center gap-2 mb-2">
+                  <div className="w-6 h-6 bg-green-200 rounded-full"></div>
+                  <span className="text-xs font-bold text-gray-700">RunnerMike23</span>
+                </div>
+                <p className="text-sm font-medium text-ufv-dark mb-2">First 5K complete! 🎉</p>
+                <div className="flex items-center gap-4 text-xs text-gray-500">
+                  <span className="flex items-center gap-1"><Heart size={12} /> 24</span>
+                  <span className="flex items-center gap-1"><MessageCircle size={12} /> 8</span>
+                </div>
+              </div>
+
+              <div className="p-3 bg-gray-50 rounded-lg border-l-4 border-blue-500">
+                <div className="flex items-center gap-2 mb-2">
+                  <div className="w-6 h-6 bg-blue-200 rounded-full"></div>
+                  <span className="text-xs font-bold text-gray-700">SarahK_CS</span>
+                </div>
+                <p className="text-sm font-medium text-ufv-dark mb-2">Tips for running in the rain?</p>
+                <div className="flex items-center gap-4 text-xs text-gray-500">
+                  <span className="flex items-center gap-1"><Heart size={12} /> 12</span>
+                  <span className="flex items-center gap-1"><MessageCircle size={12} /> 15</span>
+                </div>
+              </div>
+
+              <div className="p-3 bg-gray-50 rounded-lg border-l-4 border-purple-500">
+                <div className="flex items-center gap-2 mb-2">
+                  <div className="w-6 h-6 bg-purple-200 rounded-full"></div>
+                  <span className="text-xs font-bold text-gray-700">AlexM</span>
+                </div>
+                <p className="text-sm font-medium text-ufv-dark mb-2">Saturday run was amazing!</p>
+                <div className="flex items-center gap-4 text-xs text-gray-500">
+                  <span className="flex items-center gap-1"><Heart size={12} /> 45</span>
+                  <span className="flex items-center gap-1"><MessageCircle size={12} /> 22</span>
+                </div>
+              </div>
+            </div>
+
+            <button className="w-full mt-4 py-3 bg-ufv-green text-white rounded-lg font-bold hover:bg-ufv-dark transition-colors flex items-center justify-center gap-2">
+              <Plus size={18} /> Share Your Story
+            </button>
+          </div>
+          <div className="text-center">
+            <h4 className="font-heading font-bold text-lg text-ufv-dark mb-1">Community Stories</h4>
+            <p className="text-sm text-gray-600">Connect & support each other</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Feature Highlights */}
+      <div className="bg-ufv-dark text-white rounded-2xl p-12">
+        <h3 className="text-3xl font-heading font-bold mb-8 text-center">Designed for Your Experience</h3>
+        <div className="grid md:grid-cols-3 gap-8">
+          <div className="text-center">
+            <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Smartphone className="text-ufv-lightGreen" size={32} />
+            </div>
+            <h4 className="font-heading font-bold text-lg mb-2">Intuitive Interface</h4>
+            <p className="text-gray-300 text-sm">Simple, clean design that puts your wellness first, not confusing features or upsells.</p>
+          </div>
+          <div className="text-center">
+            <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Lock className="text-ufv-lightGreen" size={32} />
+            </div>
+            <h4 className="font-heading font-bold text-lg mb-2">Privacy by Design</h4>
+            <p className="text-gray-300 text-sm">Your data stays local. Share only what you want, when you want. No surveillance, ever.</p>
+          </div>
+          <div className="text-center">
+            <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Users className="text-ufv-lightGreen" size={32} />
+            </div>
+            <h4 className="font-heading font-bold text-lg mb-2">Community-Centered</h4>
+            <p className="text-gray-300 text-sm">Every feature built with input from students, staff, and community members. Your voice matters.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
 // --- Main App Component ---
 
 const App = () => {
@@ -897,7 +1929,7 @@ const App = () => {
           <>
             <HeroSection onNavigate={setPage} />
             <AboutApp />
-            <Impact />
+            <LocalImpact />
             <GetInvolved />
           </>
         );
@@ -905,6 +1937,8 @@ const App = () => {
         return <AboutInitiative />;
       case Page.ABOUT_APP:
         return <AboutApp />;
+      case Page.ABOUT_GRANT:
+        return <AboutGrant />;
       case Page.ETHICS:
         return <Ethics />;
       case Page.IMPACT:
@@ -921,6 +1955,8 @@ const App = () => {
         return <GiveHub />;
       case Page.COMMUNITY_STORIES:
         return <CommunityStories />;
+      case Page.APP_MOCKUP:
+        return <AppMockup />;
       default:
         return <HeroSection onNavigate={setPage} />;
     }

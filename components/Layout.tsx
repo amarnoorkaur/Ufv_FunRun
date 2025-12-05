@@ -13,10 +13,12 @@ const NAV_ITEMS: NavItem[] = [
   { label: 'Home', page: Page.HOME },
   { label: 'About', page: Page.ABOUT_INITIATIVE },
   { label: 'The App', page: Page.ABOUT_APP },
+  { label: 'The Grant', page: Page.ABOUT_GRANT },
   { label: 'GiveHub', page: Page.GIVEHUB },
   { label: 'Stories', page: Page.COMMUNITY_STORIES },
   { label: 'Ethics', page: Page.ETHICS },
   { label: 'Privacy', page: Page.PRIVACY },
+  { label: 'App Preview', page: Page.APP_MOCKUP },
   { label: 'FAQ', page: Page.FAQ },
 ];
 
