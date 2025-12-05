@@ -72,8 +72,8 @@ const HeroSection = ({ onNavigate }: { onNavigate: (page: Page) => void }) => (
       </div>
 
       {/* Campus Illustration */}
-      <div className="mt-16 w-full max-w-7xl mx-auto overflow-hidden">
-        <svg className="w-full h-auto rounded-xl shadow-lg" width="2000" height="520" viewBox="0 0 1400 520" xmlns="http://www.w3.org/2000/svg">
+      <div className="mt-16 w-screen relative left-1/2 right-1/2 -mx-[50vw]">
+        <svg className="w-full h-auto" width="100%" height="520" viewBox="0 0 1400 520" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
           {/* Sky Gradient */}
           <defs>
             <linearGradient id="heroSkyGrad" x1="0" y1="0" x2="0" y2="1">
@@ -88,12 +88,17 @@ const HeroSection = ({ onNavigate }: { onNavigate: (page: Page) => void }) => (
 
           <rect width="1400" height="520" fill="url(#heroSkyGrad)"/>
 
-          {/* Birds with gentle animation */}
+          {/* Title - moved to top */}
+          <text x="700" y="110" textAnchor="middle" fontSize="48" fill="#006341" fontFamily="Inter" fontWeight="600">
+            Welcome to the UFV Fun Run Community
+          </text>
+
+          {/* Birds with gentle animation - positioned in sky corners */}
           <g>
-            <path d="M180 110 q10-7 20 0 M220 120 q10-7 20 0" stroke="#6E8F6E" strokeWidth="2" fill="none">
+            <path d="M120 160 q10-7 20 0 M160 170 q10-7 20 0" stroke="#6E8F6E" strokeWidth="2" fill="none">
               <animateTransform attributeName="transform" type="translate" values="0,0; 5,-3; 0,0" dur="2s" repeatCount="indefinite"/>
             </path>
-            <path d="M1050 100 q10-7 20 0 M1090 110 q10-7 20 0" stroke="#6E8F6E" strokeWidth="2" fill="none">
+            <path d="M1200 150 q10-7 20 0 M1240 160 q10-7 20 0" stroke="#6E8F6E" strokeWidth="2" fill="none">
               <animateTransform attributeName="transform" type="translate" values="0,0; -5,-2; 0,0" dur="2.5s" repeatCount="indefinite"/>
             </path>
           </g>
@@ -200,11 +205,6 @@ const HeroSection = ({ onNavigate }: { onNavigate: (page: Page) => void }) => (
               <animate attributeName="cy" values="0;-5;0" dur="0.32s" repeatCount="indefinite"/>
             </circle>
           </g>
-
-          {/* Title */}
-          <text x="700" y="110" textAnchor="middle" fontSize="48" fill="#006341" fontFamily="Inter" fontWeight="600">
-            Welcome to the UFV Fun Run Community
-          </text>
         </svg>
       </div>
     </div>
