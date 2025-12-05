@@ -2286,9 +2286,9 @@ const AppMockup = () => (
             <rect x="380" y="170" width="110" height="60" fill="#E5ECE5" stroke="#A3BAA3" strokeWidth="2.5" rx="8"/>
             <text x="435" y="205" textAnchor="middle" fontSize="13" fill="#333" fontFamily="Inter">Library</text>
 
-            {/* SUB */}
+            {/* Student Lounge */}
             <rect x="650" y="300" width="130" height="70" fill="#E5ECE5" stroke="#A3BAA3" strokeWidth="2.5" rx="8"/>
-            <text x="715" y="332" textAnchor="middle" fontSize="13" fill="#333" fontFamily="Inter">SUB</text>
+            <text x="715" y="332" textAnchor="middle" fontSize="13" fill="#333" fontFamily="Inter">Student Lounge</text>
 
             {/* Fitness Centre */}
             <rect x="420" y="350" width="120" height="70" fill="#E5ECE5" stroke="#A3BAA3" strokeWidth="2.5" rx="8"/>
@@ -2354,11 +2354,6 @@ const AppMockup = () => (
                 </animateMotion>
               </circle>
             </g>
-
-            {/* Bottom caption */}
-            <text x="50%" y="525" textAnchor="middle" fontSize="14" fill="#4B5563" fontFamily="Inter">
-              Live route preview — the animated runner shows a typical 5K loop around UFV's core campus.
-            </text>
           </svg>
         </div>
       </section>
