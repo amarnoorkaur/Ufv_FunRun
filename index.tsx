@@ -72,8 +72,8 @@ const HeroSection = ({ onNavigate }: { onNavigate: (page: Page) => void }) => (
       </div>
 
       {/* Campus Illustration */}
-      <div className="mt-16 max-w-6xl mx-auto">
-        <svg className="w-full h-auto rounded-xl shadow-lg" viewBox="0 0 1400 520" xmlns="http://www.w3.org/2000/svg">
+      <div className="mt-16 w-full max-w-7xl mx-auto overflow-hidden">
+        <svg className="w-full h-auto rounded-xl shadow-lg" width="2000" height="520" viewBox="0 0 1400 520" xmlns="http://www.w3.org/2000/svg">
           {/* Sky Gradient */}
           <defs>
             <linearGradient id="heroSkyGrad" x1="0" y1="0" x2="0" y2="1">
