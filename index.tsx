@@ -223,6 +223,7 @@ const HeroSection = ({ onNavigate }: { onNavigate: (page: Page) => void }) => (
             muted
             loop
             playsInline
+            controls
             preload="auto"
           >
             <source src="/invideo-ai-1080 Join the Movement_ UFV Fun Run 2025-12-05.mp4" type="video/mp4" />
